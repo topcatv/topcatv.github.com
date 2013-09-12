@@ -5,6 +5,8 @@ menu:
 widgets: 
 - search
 - category
+- recent_posts
+- tag
 - tagcloud
 - weibo
 
