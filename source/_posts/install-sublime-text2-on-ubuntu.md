@@ -7,7 +7,7 @@ tags: [ubuntu, ficxt, sublime text2]
 ### 第一步 下载安装
 ----
 到Sublime Text官网去[下载](http://www.sublimetext.com/2)安装包（我这里使用的是64位的）并解压
-``` bash 解压 start:51 mark:51
+``` bash 解压
 tar xvf Sublime\ Text\ 2.0.2\ x64.tar.bz2
 ```
 <!-- more -->
