@@ -9,6 +9,7 @@ description:
 author: 刘易(Roy Liu)
 language: zh-Hans
 timezone: Asia/Shanghai
+avatar: http://www.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -60,6 +61,13 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+since: 2014
+
+# Social links
+social:
+  github: https://github.com/topcatv
+  weibo: http://weibo.com/topcat
+
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
@@ -69,7 +77,7 @@ menu:
   home: /
   archives: /archives
   #about: /about
-  #categories: /categories
+  categories: /categories
   tags: /tags
   #commonweal: /404.html
 
