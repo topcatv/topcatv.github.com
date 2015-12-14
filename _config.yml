@@ -81,9 +81,9 @@ theme: next
 
 menu:
   home: /
+  categories: /categories
   archives: /archives
   #about: /about
-  categories: /categories
   tags: /tags
   #commonweal: /404.html
 
