@@ -11,6 +11,12 @@ language: zh-Hans
 timezone: Asia/Shanghai
 avatar: http://www.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09
 
+duoshuo_shortname: topcatv
+baidu_analytics: 097eb9b3f5a3ac558d70578c75e5645b
+swiftype_key: topcat_blog
+jiathis: true
+scheme: Mist
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://topcatv.github.com
