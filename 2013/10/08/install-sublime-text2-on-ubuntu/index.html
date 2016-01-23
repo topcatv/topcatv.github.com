@@ -1,0 +1,821 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ficxt,sublime text2,ubuntu," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="第一步 下载安装
+到Sublime Text官网去下载安装包（我这里使用的是64位的）并解压解压1tar xvf Sublime\ Text\ 2.0.2\ x64.tar.bz2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Ubuntu上安装Sublime Text2并解决无法使用fcitx中文输入法问题">
+<meta property="og:url" content="http://topcatv.github.com/2013/10/08/install-sublime-text2-on-ubuntu/index.html">
+<meta property="og:site_name" content="老男将的叨叨">
+<meta property="og:description" content="第一步 下载安装
+到Sublime Text官网去下载安装包（我这里使用的是64位的）并解压解压1tar xvf Sublime\ Text\ 2.0.2\ x64.tar.bz2">
+<meta property="og:updated_time" content="2016-01-23T12:45:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在Ubuntu上安装Sublime Text2并解决无法使用fcitx中文输入法问题">
+<meta name="twitter:description" content="第一步 下载安装
+到Sublime Text官网去下载安装包（我这里使用的是64位的）并解压解压1tar xvf Sublime\ Text\ 2.0.2\ x64.tar.bz2">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 在Ubuntu上安装Sublime Text2并解决无法使用fcitx中文输入法问题 | 老男将的叨叨 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?097eb9b3f5a3ac558d70578c75e5645b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">老男将的叨叨</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生命不息 折腾不止</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="#" class="st-search-show-outputs">
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'topcat_blog','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                在Ubuntu上安装Sublime Text2并解决无法使用fcitx中文输入法问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2013-10-08T11:05:29+08:00" content="2013-10-08">
+              2013-10-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">ubuntu</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/10/08/install-sublime-text2-on-ubuntu/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/10/08/install-sublime-text2-on-ubuntu/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="u7B2C_u4E00_u6B65__u4E0B_u8F7D_u5B89_u88C5"><a href="#u7B2C_u4E00_u6B65__u4E0B_u8F7D_u5B89_u88C5" class="headerlink" title="第一步 下载安装"></a>第一步 下载安装</h3><hr>
+<p>到Sublime Text官网去<a href="http://www.sublimetext.com/2" target="_blank" rel="external">下载</a>安装包（我这里使用的是64位的）并解压<br><figure class="highlight bash"><figcaption><span>解压</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf Sublime\ Text\ <span class="number">2.0</span>.<span class="number">2</span>\ x64.tar.bz2</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h3 id="u7B2C_u4E8C_u6B65__u79FB_u52A8"><a href="#u7B2C_u4E8C_u6B65__u79FB_u52A8" class="headerlink" title="第二步 移动"></a>第二步 移动</h3><hr>
+<p>将解压后的目录移动到/opt/目录下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv Sublime\ Text\ <span class="number">2</span> /opt/</span><br></pre></td></tr></table></figure></p>
+<h3 id="u7B2C_u4E09_u6B65__u521B_u5EFA_u7B26_u53F7_u94FE_u63A5"><a href="#u7B2C_u4E09_u6B65__u521B_u5EFA_u7B26_u53F7_u94FE_u63A5" class="headerlink" title="第三步 创建符号链接"></a>第三步 创建符号链接</h3><hr>
+<p>创建符号链接到/usr/bin/下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln <span class="operator">-s</span> /opt/Sublime\ Text\ <span class="number">2</span>/sublime_text /usr/bin/sublime</span><br></pre></td></tr></table></figure></p>
+<h3 id="u7B2C_u56DB_u6B65__u521B_u5EFA_u542F_u52A8_u5668"><a href="#u7B2C_u56DB_u6B65__u521B_u5EFA_u542F_u52A8_u5668" class="headerlink" title="第四步 创建启动器"></a>第四步 创建启动器</h3><hr>
+<p>创建并编辑/usr/share/applications/sublime.desktop文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /usr/share/applications/sublime.desktop</span><br></pre></td></tr></table></figure></p>
+<p>文件内容如下<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">[Desktop Entry]</span></span><br><span class="line"><span class="setting">Version=<span class="value"><span class="number">1.0</span></span></span></span><br><span class="line"><span class="setting">Name=<span class="value">Sublime Text <span class="number">2</span></span></span></span><br><span class="line"><span class="comment"># Only KDE 4 seems to use GenericName, so we reuse the KDE strings.</span></span><br><span class="line"><span class="comment"># From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.</span></span><br><span class="line"><span class="setting">GenericName=<span class="value">Text Editor</span></span></span><br><span class="line"></span><br><span class="line"><span class="setting">Exec=<span class="value">sublime</span></span></span><br><span class="line"><span class="setting">Terminal=<span class="value"><span class="keyword">false</span></span></span></span><br><span class="line"><span class="setting">Icon=<span class="value">/opt/Sublime Text <span class="number">2</span>/Icon/<span class="number">48</span>x48/sublime_text.png</span></span></span><br><span class="line"><span class="setting">Type=<span class="value">Application</span></span></span><br><span class="line"><span class="setting">Categories=<span class="value">TextEditor;IDE;Development</span></span></span><br><span class="line"><span class="setting">X-Ayatana-Desktop-Shortcuts=<span class="value">NewWindow</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[NewWindow Shortcut Group]</span></span><br><span class="line"><span class="setting">Name=<span class="value">New Window</span></span></span><br><span class="line"><span class="setting">Exec=<span class="value">sublime -n</span></span></span><br><span class="line"><span class="setting">TargetEnvironment=<span class="value">Unity</span></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="u7B2C_u4E94_u6B65__u89E3_u51B3_u4E2D_u6587_u8F93_u5165_u6CD5_u4E0D_u80FD_u4F7F_u7528_u7684_u95EE_u9898"><a href="#u7B2C_u4E94_u6B65__u89E3_u51B3_u4E2D_u6587_u8F93_u5165_u6CD5_u4E0D_u80FD_u4F7F_u7528_u7684_u95EE_u9898" class="headerlink" title="第五步 解决中文输入法不能使用的问题"></a>第五步 解决中文输入法不能使用的问题</h3><hr>
+<ul>
+<li>创建文件sublime-imfix.c<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim sublime-imfix.c</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>文件内容如下<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">sublime-imfix.c</span><br><span class="line">Use LD_PRELOAD to interpose some function to fix sublime input method support for linux.</span><br><span class="line">By Cjacker Huang &lt;jianzhong.huang at i-soft.com.cn&gt;</span><br><span class="line"></span><br><span class="line">gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC</span><br><span class="line">LD_PRELOAD=./libsublime-imfix.so sublime_text</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">#include &lt;gtk/gtk.h&gt;</span><br><span class="line">#include &lt;gdk/gdkx.h&gt;</span><br><span class="line">typedef GdkSegment GdkRegionBox;</span><br><span class="line"></span><br><span class="line">struct _GdkRegion</span><br><span class="line">&#123;</span><br><span class="line">  long size;</span><br><span class="line">  long numRects;</span><br><span class="line">  GdkRegionBox *rects;</span><br><span class="line">  GdkRegionBox extents;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">GtkIMContext *local_context;</span><br><span class="line"></span><br><span class="line">void</span><br><span class="line">gdk_region_get_clipbox (const GdkRegion *region,</span><br><span class="line">            GdkRectangle    *rectangle)</span><br><span class="line">&#123;</span><br><span class="line">  g_return_if_fail (region != NULL);</span><br><span class="line">  g_return_if_fail (rectangle != NULL);</span><br><span class="line"></span><br><span class="line">  rectangle-&gt;x = region-&gt;extents.x1;</span><br><span class="line">  rectangle-&gt;y = region-&gt;extents.y1;</span><br><span class="line">  rectangle-&gt;width = region-&gt;extents.x2 - region-&gt;extents.x1;</span><br><span class="line">  rectangle-&gt;height = region-&gt;extents.y2 - region-&gt;extents.y1;</span><br><span class="line">  GdkRectangle rect;</span><br><span class="line">  rect.x = rectangle-&gt;x;</span><br><span class="line">  rect.y = rectangle-&gt;y;</span><br><span class="line">  rect.width = 0;</span><br><span class="line">  rect.height = rectangle-&gt;height; </span><br><span class="line">  //The caret width is 2; </span><br><span class="line">  //Maybe sometimes we will make a mistake, but for most of the time, it should be the caret.</span><br><span class="line">  if(rectangle-&gt;width == 2 &amp;&amp; GTK_IS_IM_CONTEXT(local_context)) &#123;</span><br><span class="line">        gtk_im_context_set_cursor_location(local_context, rectangle);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//this is needed, for example, if you input something in file dialog and return back the edit area</span><br><span class="line">//context will lost, so here we set it again.</span><br><span class="line"></span><br><span class="line">static GdkFilterReturn event_filter (GdkXEvent *xevent, GdkEvent *event, gpointer im_context)</span><br><span class="line">&#123;</span><br><span class="line">    XEvent *xev = (XEvent *)xevent;</span><br><span class="line">    if(xev-&gt;type == KeyRelease &amp;&amp; GTK_IS_IM_CONTEXT(im_context)) &#123;</span><br><span class="line">       GdkWindow * win = g_object_get_data(G_OBJECT(im_context),"window");</span><br><span class="line">       if(GDK_IS_WINDOW(win))</span><br><span class="line">         gtk_im_context_set_client_window(im_context, win);</span><br><span class="line">    &#125;</span><br><span class="line">    return GDK_FILTER_CONTINUE;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void gtk_im_context_set_client_window (GtkIMContext *context,</span><br><span class="line">          GdkWindow    *window)</span><br><span class="line">&#123;</span><br><span class="line">  GtkIMContextClass *klass;</span><br><span class="line">  g_return_if_fail (GTK_IS_IM_CONTEXT (context));</span><br><span class="line">  klass = GTK_IM_CONTEXT_GET_CLASS (context);</span><br><span class="line">  if (klass-&gt;set_client_window)</span><br><span class="line">    klass-&gt;set_client_window (context, window);</span><br><span class="line"></span><br><span class="line">  if(!GDK_IS_WINDOW (window))</span><br><span class="line">    return;</span><br><span class="line">  g_object_set_data(G_OBJECT(context),"window",window);</span><br><span class="line">  int width = gdk_window_get_width(window);</span><br><span class="line">  int height = gdk_window_get_height(window);</span><br><span class="line">  if(width != 0 &amp;&amp; height !=0) &#123;</span><br><span class="line">    gtk_im_context_focus_in(context);</span><br><span class="line">    local_context = context;</span><br><span class="line">  &#125;</span><br><span class="line">  gdk_window_add_filter (window, event_filter, context); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>编译sublime-imfix.c<br>安装必要的编译包<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get <span class="operator"><span class="keyword">install</span> <span class="keyword">build</span>-essential</span><br><span class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> libgtk2<span class="number">.0</span>-dev</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>编译<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -shared -o libsublime-imfix<span class="class">.so</span> sublime-imfix<span class="class">.c</span>  `pkg-config --libs --cflags gtk+-<span class="number">2.0</span>` -fPIC</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>将libsublime-imfix.so移动到/usr/lib/下</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv libsublime-imfix.so /usr/<span class="class"><span class="keyword">lib</span>/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改启动器文件内容</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">[Desktop Entry]</span></span><br><span class="line"><span class="setting">Version=<span class="value"><span class="number">1.0</span></span></span></span><br><span class="line"><span class="setting">Name=<span class="value">Sublime Text <span class="number">2</span></span></span></span><br><span class="line"><span class="comment"># Only KDE 4 seems to use GenericName, so we reuse the KDE strings.</span></span><br><span class="line"><span class="comment"># From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.</span></span><br><span class="line"><span class="setting">GenericName=<span class="value">Text Editor</span></span></span><br><span class="line"></span><br><span class="line"><span class="setting">Exec=<span class="value">bash -c <span class="string">'LD_PRELOAD=/usr/lib/libsublime-imfix.so sublime'</span></span></span></span><br><span class="line"><span class="setting">Terminal=<span class="value"><span class="keyword">false</span></span></span></span><br><span class="line"><span class="setting">Icon=<span class="value">/opt/Sublime Text <span class="number">2</span>/Icon/<span class="number">48</span>x48/sublime_text.png</span></span></span><br><span class="line"><span class="setting">Type=<span class="value">Application</span></span></span><br><span class="line"><span class="setting">Categories=<span class="value">TextEditor;IDE;Development</span></span></span><br><span class="line"><span class="setting">X-Ayatana-Desktop-Shortcuts=<span class="value">NewWindow</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[NewWindow Shortcut Group]</span></span><br><span class="line"><span class="setting">Name=<span class="value">New Window</span></span></span><br><span class="line"><span class="setting">Exec=<span class="value">bash -c <span class="string">'LD_PRELOAD=/usr/lib/libsublime-imfix.so sublime'</span> -n</span></span></span><br><span class="line"><span class="setting">TargetEnvironment=<span class="value">Unity</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>OK到此fcitx输入法可用</p>
+<h5 id="u53C2_u8003_u6587_u7AE0"><a href="#u53C2_u8003_u6587_u7AE0" class="headerlink" title="参考文章"></a>参考文章</h5><ul>
+<li><a href="http://www.technoreply.com/how-to-install-sublime-text-2-on-ubuntu-12-04-unity/" target="_blank" rel="external">How to install Sublime Text 2 on Ubuntu 12.04 (Unity)</a></li>
+<li><a href="http://my.oschina.net/wugaoxing/blog/121281?p=2" target="_blank" rel="external">Ubuntu系统下Sublime Text 2中fcitx中文输入法的解决方法</a></li>
+</ul>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ficxt/" rel="tag">#ficxt</a>
+          
+            <a href="/tags/sublime-text2/" rel="tag">#sublime text2</a>
+          
+            <a href="/tags/ubuntu/" rel="tag">#ubuntu</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/10/07/how-to-install-fcitx-on-ubuntu/" rel="next" title="怎样在ubuntu中安装fcitx输入法">
+                <i class="fa fa-chevron-left"></i> 怎样在ubuntu中安装fcitx输入法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/10/09/use-vundle-manage-vim-plugins/" rel="prev" title="使用Vundle来管理VIM插件">
+                使用Vundle来管理VIM插件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2013/10/08/install-sublime-text2-on-ubuntu/"
+           data-title="在Ubuntu上安装Sublime Text2并解决无法使用fcitx中文输入法问题" data-url="http://topcatv.github.com/2013/10/08/install-sublime-text2-on-ubuntu/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://www.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09"
+               alt="刘易(Roy Liu)" />
+          <p class="site-author-name" itemprop="name">刘易(Roy Liu)</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/topcatv" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> github
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/topcat" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u4E00_u6B65__u4E0B_u8F7D_u5B89_u88C5"><span class="nav-number">1.</span> <span class="nav-text">第一步 下载安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u4E8C_u6B65__u79FB_u52A8"><span class="nav-number">2.</span> <span class="nav-text">第二步 移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u4E09_u6B65__u521B_u5EFA_u7B26_u53F7_u94FE_u63A5"><span class="nav-number">3.</span> <span class="nav-text">第三步 创建符号链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u56DB_u6B65__u521B_u5EFA_u542F_u52A8_u5668"><span class="nav-number">4.</span> <span class="nav-text">第四步 创建启动器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u4E94_u6B65__u89E3_u51B3_u4E2D_u6587_u8F93_u5165_u6CD5_u4E0D_u80FD_u4F7F_u7528_u7684_u95EE_u9898"><span class="nav-number">5.</span> <span class="nav-text">第五步 解决中文输入法不能使用的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u53C2_u8003_u6587_u7AE0"><span class="nav-number">5.0.1.</span> <span class="nav-text">参考文章</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘易(Roy Liu)</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"topcatv"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>
