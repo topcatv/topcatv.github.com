@@ -5,7 +5,6 @@ tags: [windowx, 系统工具, 加速]
 ---
 
 今天介绍一款免费好用的系统（Windows）维护与加速的工具[Advanced SystemCare 6 free](http://www.iobit.com/advancedsystemcareper.php).  
-![Advanced SystemCare 6 free](http://www.iobit.com/tpl/images/products/ascfree/ascfree.png)
 *[我](http://topcatv.github.io)已经用了，你呢？*
 <!-- more -->
 
