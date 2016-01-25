@@ -9,7 +9,7 @@ description:
 author: 刘易(Roy Liu)
 language: zh-Hans
 timezone: Asia/Shanghai
-avatar: http://www.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09
+avatar: http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09
 
 duoshuo_shortname: topcatv
 baidu_analytics: 097eb9b3f5a3ac558d70578c75e5645b
@@ -71,8 +71,8 @@ since: 2014
 
 # Social links
 social:
-  github: https://github.com/topcatv
-  weibo: http://weibo.com/topcat
+  GitHub: https://github.com/topcatv
+  Weibo: http://weibo.com/topcat
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/

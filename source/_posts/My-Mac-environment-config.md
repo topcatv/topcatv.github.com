@@ -62,7 +62,7 @@ pip install --user powerline-status
 3. 继续在Text里找到Regular Font和Non-ASCII font,我这里字体都设置为DejaVu Sans Mono for Powerline，大小12pt
 
 到此重新打开iterm应该就可以看到效果了
-![iterm2 & powerline](http://f.picphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=c615912c9413b07eb9bd500d3cece01e/b3119313b07eca8058df2fea962397dda04483e0.jpg?referer=4b2184d2c91b9d16d3d0ae51edbe&x=.jpg)
+![iterm2 & powerline](http://pic.yupoo.com/topcatv/FhitZ2Vp/MFJS9.png)
 
 # Mackup
 ----
