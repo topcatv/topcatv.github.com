@@ -12,11 +12,8 @@ timezone: Asia/Shanghai
 avatar: http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09
 
 #duoshuo_shortname: topcatv
-baidu_analytics: 097eb9b3f5a3ac558d70578c75e5645b
+#baidu_analytics: 097eb9b3f5a3ac558d70578c75e5645b
 #swiftype_key: topcat_blog
-jiathis:
-  uid: 1837593
-youyan_uid: 1837593
 
 menu:
   home: / || home
