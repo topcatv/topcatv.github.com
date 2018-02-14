@@ -37,20 +37,6 @@
     </url>
 
     <url>
-        <loc>http://topcatv.github.com/tags/ficxt/</loc>
-        <lastmod>2016-01-23T12:45:22.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://topcatv.github.com/tags/sublime-text2/</loc>
-        <lastmod>2016-01-23T12:45:22.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://topcatv.github.com/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</loc>
         <lastmod>2016-01-23T12:45:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -65,21 +51,14 @@
     </url>
 
     <url>
-        <loc>http://topcatv.github.com/tags/vim/</loc>
+        <loc>http://topcatv.github.com/tags/ficxt/</loc>
         <lastmod>2016-01-23T12:45:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://topcatv.github.com/tags/linux/</loc>
-        <lastmod>2016-01-23T12:45:22.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://topcatv.github.com/tags/vundle/</loc>
+        <loc>http://topcatv.github.com/tags/sublime-text2/</loc>
         <lastmod>2016-01-23T12:45:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -101,6 +80,27 @@
 
     <url>
         <loc>http://topcatv.github.com/tags/db2/</loc>
+        <lastmod>2016-01-23T12:45:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://topcatv.github.com/tags/vim/</loc>
+        <lastmod>2016-01-23T12:45:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://topcatv.github.com/tags/linux/</loc>
+        <lastmod>2016-01-23T12:45:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://topcatv.github.com/tags/vundle/</loc>
         <lastmod>2016-01-23T12:45:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
