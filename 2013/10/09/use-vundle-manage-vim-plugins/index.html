@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux,ubuntu,vim,vundle," />
+  <meta name="keywords" content="ubuntu,vim,linux,vundle," />
 
 
 
@@ -57,19 +57,18 @@
 
 
 
-<meta name="description" content="今天来介绍一下用怎么用Vundle来管理vim的各种插件
-安装Vundle:1git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle">
+<meta name="description" content="今天来介绍一下用怎么用Vundle来管理vim的各种插件 安装Vundle:1git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle">
+<meta name="keywords" content="ubuntu,vim,linux,vundle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Vundle来管理VIM插件">
 <meta property="og:url" content="http://topcatv.github.com/2013/10/09/use-vundle-manage-vim-plugins/index.html">
 <meta property="og:site_name" content="老男将的叨叨">
-<meta property="og:description" content="今天来介绍一下用怎么用Vundle来管理vim的各种插件
-安装Vundle:1git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle">
+<meta property="og:description" content="今天来介绍一下用怎么用Vundle来管理vim的各种插件 安装Vundle:1git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-01-23T12:45:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Vundle来管理VIM插件">
-<meta name="twitter:description" content="今天来介绍一下用怎么用Vundle来管理vim的各种插件
-安装Vundle:1git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle">
+<meta name="twitter:description" content="今天来介绍一下用怎么用Vundle来管理vim的各种插件 安装Vundle:1git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle">
 
 
 
@@ -322,13 +321,13 @@
 
       
         <p>今天来介绍一下用怎么用Vundle来管理vim的各种插件</p>
-<h3 id="u5B89_u88C5Vundle_3A"><a href="#u5B89_u88C5Vundle_3A" class="headerlink" title="安装Vundle:"></a>安装Vundle:</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/gmarik/vundle.git ~/.vim/bundle/vundle</span><br></pre></td></tr></table></figure>
+<h3 id="安装Vundle"><a href="#安装Vundle" class="headerlink" title="安装Vundle:"></a>安装Vundle:</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/gmarik/</span>vundle.git ~<span class="regexp">/.vim/</span>bundle<span class="regexp">/vundle</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="u914D_u7F6Ebundles_uFF1A"><a href="#u914D_u7F6Ebundles_uFF1A" class="headerlink" title="配置bundles："></a>配置bundles：</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> nocompatible               <span class="string">" be iMproved</span><br><span class="line">filetype off                   "</span> <span class="keyword">required</span>!</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> rtp+=~/.vim/bundle/vundle/</span><br><span class="line"><span class="keyword">call</span> vundle#rc()</span><br><span class="line"></span><br><span class="line"><span class="string">" let Vundle manage Vundle</span><br><span class="line">"</span> <span class="keyword">required</span>! </span><br><span class="line">Bundle <span class="string">'gmarik/vundle'</span></span><br><span class="line"></span><br><span class="line"><span class="string">" My Bundles here:</span><br><span class="line">"</span></span><br><span class="line"><span class="string">" original repos on github</span><br><span class="line">Bundle 'tpope/vim-fugitive'</span><br><span class="line">Bundle 'Lokaltog/vim-easymotion'</span><br><span class="line">Bundle 'rstacruz/sparkup', &#123;'rtp': 'vim/'&#125;</span><br><span class="line">Bundle 'tpope/vim-rails.git'</span><br><span class="line">"</span> vim-scripts repos</span><br><span class="line">Bundle <span class="string">'L9'</span></span><br><span class="line">Bundle <span class="string">'FuzzyFinder'</span></span><br><span class="line"><span class="string">" non github repos</span><br><span class="line">Bundle 'git://git.wincent.com/command-t.git'</span><br><span class="line">"</span> git repos <span class="keyword">on</span> your <span class="keyword">local</span> machine (ie. <span class="keyword">when</span> working <span class="keyword">on</span> your own <span class="keyword">plugin</span>)</span><br><span class="line">Bundle <span class="string">'file:///Users/gmarik/path/to/plugin'</span></span><br><span class="line"><span class="string">" ...</span><br><span class="line"></span><br><span class="line">filetype plugin indent on     "</span> <span class="keyword">required</span>!</span><br><span class="line"><span class="string">"</span><br><span class="line">"</span> Brief <span class="keyword">help</span></span><br><span class="line"><span class="string">" :BundleList          - list configured bundles</span><br><span class="line">"</span> :BundleInstall(!)    - <span class="keyword">install</span>(<span class="keyword">update</span>) bundles</span><br><span class="line"><span class="string">" :BundleSearch(!) foo - search(or refresh cache first) for foo</span><br><span class="line">"</span> :BundleClean(!)      - <span class="keyword">confirm</span>(<span class="keyword">or</span> <span class="keyword">auto</span>-approve) removal <span class="keyword">of</span> <span class="keyword">unused</span> bundles</span><br><span class="line"><span class="string">"</span><br><span class="line">"</span> see :h vundle <span class="keyword">for</span> more details <span class="keyword">or</span> wiki <span class="keyword">for</span> FAQ</span><br><span class="line"><span class="string">" NOTE: comments after Bundle command are not allowed..</span></span></span><br></pre></td></tr></table></figure>
-<p>可以到<a href="http://vim-scripts.org/vim/scripts.html" target="_blank" rel="external">这里</a>查找你需要的插件</p>
-<h3 id="u5B89_u88C5_u914D_u7F6E_u7684bundles_uFF1A"><a href="#u5B89_u88C5_u914D_u7F6E_u7684bundles_uFF1A" class="headerlink" title="安装配置的bundles："></a>安装配置的bundles：</h3><p>启动<code>vim</code>，执行<code>:BundleInstall</code></p>
-<h5 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h5><ol>
-<li><a href="https://github.com/gmarik/vundle" target="_blank" rel="external">https://github.com/gmarik/vundle</a></li>
+<h3 id="配置bundles："><a href="#配置bundles：" class="headerlink" title="配置bundles："></a>配置bundles：</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> nocompatible               <span class="comment">" be iMproved</span></span><br><span class="line"><span class="keyword">filetype</span> off                   <span class="comment">" required!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> rtp+=~/.<span class="keyword">vim</span>/bundle/vundle/</span><br><span class="line"><span class="keyword">call</span> vundle#rc()</span><br><span class="line"></span><br><span class="line"><span class="comment">" let Vundle manage Vundle</span></span><br><span class="line"><span class="comment">" required! </span></span><br><span class="line">Bundle <span class="string">'gmarik/vundle'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" My Bundles here:</span></span><br><span class="line"><span class="comment">"</span></span><br><span class="line"><span class="comment">" original repos on github</span></span><br><span class="line">Bundle <span class="string">'tpope/vim-fugitive'</span></span><br><span class="line">Bundle <span class="string">'Lokaltog/vim-easymotion'</span></span><br><span class="line">Bundle <span class="string">'rstacruz/sparkup'</span>, &#123;<span class="string">'rtp'</span>: <span class="string">'vim/'</span>&#125;</span><br><span class="line">Bundle <span class="string">'tpope/vim-rails.git'</span></span><br><span class="line"><span class="comment">" vim-scripts repos</span></span><br><span class="line">Bundle <span class="string">'L9'</span></span><br><span class="line">Bundle <span class="string">'FuzzyFinder'</span></span><br><span class="line"><span class="comment">" non github repos</span></span><br><span class="line">Bundle <span class="string">'git://git.wincent.com/command-t.git'</span></span><br><span class="line"><span class="comment">" git repos on your local machine (ie. when working on your own plugin)</span></span><br><span class="line">Bundle <span class="string">'file:///Users/gmarik/path/to/plugin'</span></span><br><span class="line"><span class="comment">" ...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">filetype</span> plugin <span class="built_in">indent</span> <span class="keyword">on</span>     <span class="comment">" required!</span></span><br><span class="line"><span class="comment">"</span></span><br><span class="line"><span class="comment">" Brief help</span></span><br><span class="line"><span class="comment">" :BundleList          - list configured bundles</span></span><br><span class="line"><span class="comment">" :BundleInstall(!)    - install(update) bundles</span></span><br><span class="line"><span class="comment">" :BundleSearch(!) foo - search(or refresh cache first) for foo</span></span><br><span class="line"><span class="comment">" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles</span></span><br><span class="line"><span class="comment">"</span></span><br><span class="line"><span class="comment">" see :h vundle for more details or wiki for FAQ</span></span><br><span class="line"><span class="comment">" <span class="doctag">NOTE:</span> comments after Bundle command are not allowed..</span></span><br></pre></td></tr></table></figure>
+<p>可以到<a href="http://vim-scripts.org/vim/scripts.html" target="_blank" rel="noopener">这里</a>查找你需要的插件</p>
+<h3 id="安装配置的bundles："><a href="#安装配置的bundles：" class="headerlink" title="安装配置的bundles："></a>安装配置的bundles：</h3><p>启动<code>vim</code>，执行<code>:BundleInstall</code></p>
+<h5 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h5><ol>
+<li><a href="https://github.com/gmarik/vundle" target="_blank" rel="noopener">https://github.com/gmarik/vundle</a></li>
 </ol>
 
       
@@ -338,11 +337,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag">#linux</a>
-          
             <a href="/tags/ubuntu/" rel="tag">#ubuntu</a>
           
             <a href="/tags/vim/" rel="tag">#vim</a>
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
           
             <a href="/tags/vundle/" rel="tag">#vundle</a>
           
@@ -458,7 +457,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -472,7 +471,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -522,7 +521,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B89_u88C5Vundle_3A"><span class="nav-number">1.</span> <span class="nav-text">安装Vundle:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u914D_u7F6Ebundles_uFF1A"><span class="nav-number">2.</span> <span class="nav-text">配置bundles：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B89_u88C5_u914D_u7F6E_u7684bundles_uFF1A"><span class="nav-number">3.</span> <span class="nav-text">安装配置的bundles：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u53C2_u8003"><span class="nav-number">3.0.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Vundle"><span class="nav-number">1.</span> <span class="nav-text">安装Vundle:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置bundles："><span class="nav-number">2.</span> <span class="nav-text">配置bundles：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置的bundles："><span class="nav-number">3.</span> <span class="nav-text">安装配置的bundles：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考"><span class="nav-number">3.0.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -544,7 +543,7 @@
         <div class="copyright" >
   
   &copy;  2014 - 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>

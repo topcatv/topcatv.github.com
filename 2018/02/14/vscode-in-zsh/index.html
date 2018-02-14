@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java,mybatis,db2," />
+  <meta name="keywords" content="mac,zsh,vs code," />
 
 
 
@@ -57,18 +57,18 @@
 
 
 
-<meta name="description" content="在mybatis的sql配置文件里的insert标签里添加（DB2适用）123&amp;lt;selectKey resultClass=&quot;long&quot; keyProperty=&quot;_id&quot;&amp;gt;    SELECT IDENTITY_VAL_LOCAL() FROM SYSIBM.SYSDUMMY1&amp;lt;/selectKey&amp;gt;">
-<meta name="keywords" content="java,mybatis,db2">
+<meta name="description" content="我们在mac上使用Visual Studio Code时希望在zsh中通过命令快速打开一个文件或文件夹如何做到？">
+<meta name="keywords" content="mac,zsh,vs code">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mybatis里如何在insert后获得主键值">
-<meta property="og:url" content="http://topcatv.github.com/2013/09/12/mybatis-auto-increase/index.html">
+<meta property="og:title" content="将vs code配置到zsh中命令行启动">
+<meta property="og:url" content="http://topcatv.github.com/2018/02/14/vscode-in-zsh/index.html">
 <meta property="og:site_name" content="老男将的叨叨">
-<meta property="og:description" content="在mybatis的sql配置文件里的insert标签里添加（DB2适用）123&amp;lt;selectKey resultClass=&quot;long&quot; keyProperty=&quot;_id&quot;&amp;gt;    SELECT IDENTITY_VAL_LOCAL() FROM SYSIBM.SYSDUMMY1&amp;lt;/selectKey&amp;gt;">
+<meta property="og:description" content="我们在mac上使用Visual Studio Code时希望在zsh中通过命令快速打开一个文件或文件夹如何做到？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-01-23T12:45:22.000Z">
+<meta property="og:updated_time" content="2018-02-14T13:05:16.230Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mybatis里如何在insert后获得主键值">
-<meta name="twitter:description" content="在mybatis的sql配置文件里的insert标签里添加（DB2适用）123&amp;lt;selectKey resultClass=&quot;long&quot; keyProperty=&quot;_id&quot;&amp;gt;    SELECT IDENTITY_VAL_LOCAL() FROM SYSIBM.SYSDUMMY1&amp;lt;/selectKey&amp;gt;">
+<meta name="twitter:title" content="将vs code配置到zsh中命令行启动">
+<meta name="twitter:description" content="我们在mac上使用Visual Studio Code时希望在zsh中通过命令快速打开一个文件或文件夹如何做到？">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> Mybatis里如何在insert后获得主键值 | 老男将的叨叨 </title>
+  <title> 将vs code配置到zsh中命令行启动 | 老男将的叨叨 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -244,7 +244,7 @@
             
             
               
-                Mybatis里如何在insert后获得主键值
+                将vs code配置到zsh中命令行启动
               
             
           </h1>
@@ -256,8 +256,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2013-09-12T21:11:53+08:00" content="2013-09-12">
-              2013-09-12
+            <time itemprop="dateCreated" datetime="2018-02-14T20:48:47+08:00" content="2018-02-14">
+              2018-02-14
             </time>
           </span>
 
@@ -270,8 +270,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/mybatis/" itemprop="url" rel="index">
-                    <span itemprop="name">mybatis</span>
+                  <a href="/categories/mac/" itemprop="url" rel="index">
+                    <span itemprop="name">mac</span>
                   </a>
                 </span>
 
@@ -286,8 +286,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2013/09/12/mybatis-auto-increase/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/09/12/mybatis-auto-increase/" itemprop="commentsCount"></span>
+                <a href="/2018/02/14/vscode-in-zsh/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/02/14/vscode-in-zsh/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -308,11 +308,12 @@
       
 
       
-        <p>在mybatis的sql配置文件里的insert标签里添加（<strong>DB2适用</strong>）<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">selectKey</span> <span class="attr">resultClass</span>=<span class="string">"long"</span> <span class="attr">keyProperty</span>=<span class="string">"_id"</span>&gt;</span></span><br><span class="line">    SELECT IDENTITY_VAL_LOCAL() FROM SYSIBM.SYSDUMMY1</span><br><span class="line"><span class="tag">&lt;/<span class="name">selectKey</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>这里的<code>keyProperty</code>指的是传入参数中的属性</p>
-<p><strong>Oracle适用</strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">selectKey</span> <span class="attr">resultClass</span>=<span class="string">"long"</span> <span class="attr">order</span>=<span class="string">"BEFORE"</span> <span class="attr">keyProperty</span>=<span class="string">"_id"</span>&gt;</span></span><br><span class="line">  SELECT SEQ_TEST.NEXTVAL FROM DUAL</span><br><span class="line"><span class="tag">&lt;/<span class="name">selectKey</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>Mysql适用</strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">selectKey</span> <span class="attr">resultClass</span>=<span class="string">"long"</span> <span class="attr">order</span>=<span class="string">"BEFORE"</span> <span class="attr">keyProperty</span>=<span class="string">"_id"</span>&gt;</span></span><br><span class="line">  SELECT LAST_INSERT_ID() AS id</span><br><span class="line"><span class="tag">&lt;/<span class="name">selectKey</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+        <p>我们在mac上使用Visual Studio Code时希望在zsh中通过命令快速打开一个文件或文件夹如何做到？<br><a id="more"></a></p>
+<p>我们可以在我们的<code>.zshrc</code>文件中加入如下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> code &#123;</span><br><span class="line">    <span class="keyword">if</span> [[ <span class="variable">$#</span> = 0 ]]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        open -a <span class="string">"Visual Studio Code"</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">local</span> argPath=<span class="string">"<span class="variable">$1</span>"</span></span><br><span class="line">        [[ <span class="variable">$1</span> = /* ]] &amp;&amp; argPath=<span class="string">"<span class="variable">$1</span>"</span> || argPath=<span class="string">"<span class="variable">$PWD</span>/<span class="variable">$&#123;1#./&#125;</span>"</span></span><br><span class="line">        open -a <span class="string">"Visual Studio Code"</span> <span class="string">"<span class="variable">$argPath</span>"</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样在zsh中我们可以使用下面的命令打开 <strong>Visual Studio Code</strong></p>
+<blockquote>
+<p><code>code</code> – 打开 Visual Studio Code<br><code>code .</code> – 在 Visual Studio Code 中打开当前目录<br><code>code somefile</code> – 在 Visual Studio Code 中打开somefile</p>
+</blockquote>
 
       
     </div>
@@ -321,11 +322,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag">#java</a>
+            <a href="/tags/mac/" rel="tag">#mac</a>
           
-            <a href="/tags/mybatis/" rel="tag">#mybatis</a>
+            <a href="/tags/zsh/" rel="tag">#zsh</a>
           
-            <a href="/tags/db2/" rel="tag">#db2</a>
+            <a href="/tags/vs-code/" rel="tag">#vs code</a>
           
         </div>
       
@@ -334,17 +335,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2013/09/08/hexo-setup-blog/" rel="next" title="使用Hexo来创建个人博客">
-                <i class="fa fa-chevron-left"></i> 使用Hexo来创建个人博客
+              <a href="/2016/03/20/config-BracketHightlighter-for-Sublime-Text3/" rel="next" title="Sublime Text3配置BracketHighlighter插件">
+                <i class="fa fa-chevron-left"></i> Sublime Text3配置BracketHighlighter插件
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2013/10/06/my-baby-photo/" rel="prev" title="宝宝出生照">
-                宝宝出生照 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -393,8 +390,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2013/09/12/mybatis-auto-increase/"
-           data-title="Mybatis里如何在insert后获得主键值" data-url="http://topcatv.github.com/2013/09/12/mybatis-auto-increase/">
+      <div class="ds-thread" data-thread-key="2018/02/14/vscode-in-zsh/"
+           data-title="将vs code配置到zsh中命令行启动" data-url="http://topcatv.github.com/2018/02/14/vscode-in-zsh/">
       </div>
     
   </div>

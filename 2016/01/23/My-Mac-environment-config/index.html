@@ -57,32 +57,20 @@
 
 
 
-<meta name="description" content="MacBookPro已入手多时，现在也已用的比较熟练了，这里记录一下我的Mac的开发环境配置。下面将从几个方面记录一下板沙的成果。
-
-基础软件HomeBrew、iterm2、ohmyzsh
-美化powerline
-系统工具Mackup
-开发工具MacVim或Vim、Sublime Text 3">
+<meta name="description" content="MacBookPro已入手多时，现在也已用的比较熟练了，这里记录一下我的Mac的开发环境配置。下面将从几个方面记录一下板沙的成果。  基础软件HomeBrew、iterm2、ohmyzsh 美化powerline 系统工具Mackup 开发工具MacVim或Vim、Sublime Text 3">
+<meta name="keywords" content="mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的MacBook系统及开发环境配置">
 <meta property="og:url" content="http://topcatv.github.com/2016/01/23/My-Mac-environment-config/index.html">
 <meta property="og:site_name" content="老男将的叨叨">
-<meta property="og:description" content="MacBookPro已入手多时，现在也已用的比较熟练了，这里记录一下我的Mac的开发环境配置。下面将从几个方面记录一下板沙的成果。
-
-基础软件HomeBrew、iterm2、ohmyzsh
-美化powerline
-系统工具Mackup
-开发工具MacVim或Vim、Sublime Text 3">
+<meta property="og:description" content="MacBookPro已入手多时，现在也已用的比较熟练了，这里记录一下我的Mac的开发环境配置。下面将从几个方面记录一下板沙的成果。  基础软件HomeBrew、iterm2、ohmyzsh 美化powerline 系统工具Mackup 开发工具MacVim或Vim、Sublime Text 3">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pic.yupoo.com/topcatv/FhitZ2Vp/MFJS9.png">
 <meta property="og:updated_time" content="2016-03-20T13:05:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的MacBook系统及开发环境配置">
-<meta name="twitter:description" content="MacBookPro已入手多时，现在也已用的比较熟练了，这里记录一下我的Mac的开发环境配置。下面将从几个方面记录一下板沙的成果。
-
-基础软件HomeBrew、iterm2、ohmyzsh
-美化powerline
-系统工具Mackup
-开发工具MacVim或Vim、Sublime Text 3">
+<meta name="twitter:description" content="MacBookPro已入手多时，现在也已用的比较熟练了，这里记录一下我的Mac的开发环境配置。下面将从几个方面记录一下板沙的成果。  基础软件HomeBrew、iterm2、ohmyzsh 美化powerline 系统工具Mackup 开发工具MacVim或Vim、Sublime Text 3">
+<meta name="twitter:image" content="http://pic.yupoo.com/topcatv/FhitZ2Vp/MFJS9.png">
 
 
 
@@ -324,26 +312,26 @@
       
         <p>MacBookPro已入手多时，现在也已用的比较熟练了，这里记录一下我的Mac的开发环境配置。下面将从几个方面记录一下板沙的成果。</p>
 <ol>
-<li>基础软件<a href="http://brew.sh/" target="_blank" rel="external">HomeBrew</a>、<a href="http://iterm2.com/" target="_blank" rel="external">iterm2</a>、<a href="http://ohmyz.sh/" target="_blank" rel="external">ohmyzsh</a></li>
-<li>美化<a href="https://github.com/powerline/powerline" target="_blank" rel="external">powerline</a></li>
+<li>基础软件<a href="http://brew.sh/" target="_blank" rel="noopener">HomeBrew</a>、<a href="http://iterm2.com/" target="_blank" rel="noopener">iterm2</a>、<a href="http://ohmyz.sh/" target="_blank" rel="noopener">ohmyzsh</a></li>
+<li>美化<a href="https://github.com/powerline/powerline" target="_blank" rel="noopener">powerline</a></li>
 <li>系统工具Mackup</li>
-<li>开发工具MacVim或Vim、<a href="http://www.sublimetext.com/3" target="_blank" rel="external">Sublime Text 3</a></li>
+<li>开发工具MacVim或Vim、<a href="http://www.sublimetext.com/3" target="_blank" rel="noopener">Sublime Text 3</a></li>
 </ol>
 <a id="more"></a>
-<h1 id="u5B89_u88C5_u57FA_u7840_u8F6F_u4EF6"><a href="#u5B89_u88C5_u57FA_u7840_u8F6F_u4EF6" class="headerlink" title="安装基础软件"></a>安装基础软件</h1><hr>
-<h2 id="u5B89_u88C5Homebrew"><a href="#u5B89_u88C5Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h2><p>首先安装Homebrew，安装了Homebrew后就可以通过它来方便的安装其它的库了。(<strong>注意：安装Homebrew的前提是我们先要在AppStore里安装XCode</strong>)<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure></p>
-<p>get <a href="http://caskroom.io/" target="_blank" rel="external">cask</a>，cask可以帮助我们安装一些软件程序，比如Chrome<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap caskroom/cask</span><br></pre></td></tr></table></figure></p>
+<h1 id="安装基础软件"><a href="#安装基础软件" class="headerlink" title="安装基础软件"></a>安装基础软件</h1><hr>
+<h2 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h2><p>首先安装Homebrew，安装了Homebrew后就可以通过它来方便的安装其它的库了。(<strong>注意：安装Homebrew的前提是我们先要在AppStore里安装XCode</strong>)<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure></p>
+<p>get <a href="http://caskroom.io/" target="_blank" rel="noopener">cask</a>，cask可以帮助我们安装一些软件程序，比如Chrome<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap caskroom/cask</span><br></pre></td></tr></table></figure></p>
 <p>安装Chrome<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install google-chrome</span><br></pre></td></tr></table></figure></p>
-<p>我这里还通过Homebrew安装了<a href="https://github.com/lra/mackup" target="_blank" rel="external">mackup</a>，python，nvm，gradle，maven，macvim</p>
-<h2 id="u4F7F_u7528Homebrew_u5B89_u88C5iTerm2"><a href="#u4F7F_u7528Homebrew_u5B89_u88C5iTerm2" class="headerlink" title="使用Homebrew安装iTerm2"></a>使用Homebrew安装iTerm2</h2><hr>
+<p>我这里还通过Homebrew安装了<a href="https://github.com/lra/mackup" target="_blank" rel="noopener">mackup</a>，python，nvm，gradle，maven，macvim</p>
+<h2 id="使用Homebrew安装iTerm2"><a href="#使用Homebrew安装iTerm2" class="headerlink" title="使用Homebrew安装iTerm2"></a>使用Homebrew安装iTerm2</h2><hr>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install iterm2</span><br></pre></td></tr></table></figure>
-<h2 id="u5B89_u88C5ohmyzsh"><a href="#u5B89_u88C5ohmyzsh" class="headerlink" title="安装ohmyzsh"></a>安装ohmyzsh</h2><hr>
+<h2 id="安装ohmyzsh"><a href="#安装ohmyzsh" class="headerlink" title="安装ohmyzsh"></a>安装ohmyzsh</h2><hr>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure>
 <p>到此为至基础库和软件都已安装完成</p>
-<h1 id="u5B89_u88C5powerline"><a href="#u5B89_u88C5powerline" class="headerlink" title="安装powerline"></a>安装powerline</h1><hr>
-<p>详细安装<a href="https://github.com/powerline/powerline" target="_blank" rel="external">powerline</a>的方法要以参考他的<a href="https://powerline.readthedocs.org/en/latest/installation/osx.html" target="_blank" rel="external">官方文档</a>，我这里先简单的记录一下</p>
-<p>首先要有python前面已通过Homebrew安装过了，下面通过<a href="https://pypi.python.org/pypi/pip/" target="_blank" rel="external">pip</a>安装。<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --user powerline-status</span><br></pre></td></tr></table></figure></p>
-<p>但是现在还是没有出来效果，我们还需要去安装<a href="https://github.com/powerline/fonts" target="_blank" rel="external">Powerline fonts</a>，从github上clone下面找到相应的字体文件在finder里双击就可以安装了。</p>
+<h1 id="安装powerline"><a href="#安装powerline" class="headerlink" title="安装powerline"></a>安装powerline</h1><hr>
+<p>详细安装<a href="https://github.com/powerline/powerline" target="_blank" rel="noopener">powerline</a>的方法要以参考他的<a href="https://powerline.readthedocs.org/en/latest/installation/osx.html" target="_blank" rel="noopener">官方文档</a>，我这里先简单的记录一下</p>
+<p>首先要有python前面已通过Homebrew安装过了，下面通过<a href="https://pypi.python.org/pypi/pip/" target="_blank" rel="noopener">pip</a>安装。<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --user powerline-status</span><br></pre></td></tr></table></figure></p>
+<p>但是现在还是没有出来效果，我们还需要去安装<a href="https://github.com/powerline/fonts" target="_blank" rel="noopener">Powerline fonts</a>，从github上clone下面找到相应的字体文件在finder里双击就可以安装了。</p>
 <p>安装好了后我们还要打开iterm2来做一些设置。</p>
 <ol>
 <li>打开iterm2</li>
@@ -352,8 +340,8 @@
 </ol>
 <p>到此重新打开iterm应该就可以看到效果了<br><img src="http://pic.yupoo.com/topcatv/FhitZ2Vp/MFJS9.png" alt="iterm2 &amp; powerline"></p>
 <h1 id="Mackup"><a href="#Mackup" class="headerlink" title="Mackup"></a>Mackup</h1><hr>
-<p><a href="https://github.com/lra/mackup" target="_blank" rel="external">Mackup</a>是一款备份你mac上配置的工具，它可以将配置文件link到指定的目录，你可以再把这个目录push到github上，这样你重装或换台机器时就可以很快的还原到你顺手的配置了。<br>具体安装和使用方法可以看它的github上的文档。</p>
-<h1 id="Vim__26amp_3B_Sublime_Text_3"><a href="#Vim__26amp_3B_Sublime_Text_3" class="headerlink" title="Vim &amp; Sublime Text 3"></a>Vim &amp; Sublime Text 3</h1><hr>
+<p><a href="https://github.com/lra/mackup" target="_blank" rel="noopener">Mackup</a>是一款备份你mac上配置的工具，它可以将配置文件link到指定的目录，你可以再把这个目录push到github上，这样你重装或换台机器时就可以很快的还原到你顺手的配置了。<br>具体安装和使用方法可以看它的github上的文档。</p>
+<h1 id="Vim-amp-Sublime-Text-3"><a href="#Vim-amp-Sublime-Text-3" class="headerlink" title="Vim &amp; Sublime Text 3"></a>Vim &amp; Sublime Text 3</h1><hr>
 <p>这两款编辑器也是非常好用的，vim的配置我也已经通过mackup备份到我的github上的，sublime现在用到的插件有</p>
 <ul>
 <li>AdvancedNewFile</li>
@@ -491,7 +479,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -505,7 +493,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -555,7 +543,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u5B89_u88C5_u57FA_u7840_u8F6F_u4EF6"><span class="nav-number">1.</span> <span class="nav-text">安装基础软件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B89_u88C5Homebrew"><span class="nav-number">1.1.</span> <span class="nav-text">安装Homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F7F_u7528Homebrew_u5B89_u88C5iTerm2"><span class="nav-number">1.2.</span> <span class="nav-text">使用Homebrew安装iTerm2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B89_u88C5ohmyzsh"><span class="nav-number">1.3.</span> <span class="nav-text">安装ohmyzsh</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u5B89_u88C5powerline"><span class="nav-number">2.</span> <span class="nav-text">安装powerline</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mackup"><span class="nav-number">3.</span> <span class="nav-text">Mackup</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim__26amp_3B_Sublime_Text_3"><span class="nav-number">4.</span> <span class="nav-text">Vim & Sublime Text 3</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装基础软件"><span class="nav-number">1.</span> <span class="nav-text">安装基础软件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Homebrew"><span class="nav-number">1.1.</span> <span class="nav-text">安装Homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Homebrew安装iTerm2"><span class="nav-number">1.2.</span> <span class="nav-text">使用Homebrew安装iTerm2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装ohmyzsh"><span class="nav-number">1.3.</span> <span class="nav-text">安装ohmyzsh</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装powerline"><span class="nav-number">2.</span> <span class="nav-text">安装powerline</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mackup"><span class="nav-number">3.</span> <span class="nav-text">Mackup</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim-amp-Sublime-Text-3"><span class="nav-number">4.</span> <span class="nav-text">Vim &amp; Sublime Text 3</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -577,7 +565,7 @@
         <div class="copyright" >
   
   &copy;  2014 - 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
