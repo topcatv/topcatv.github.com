@@ -96,3 +96,9 @@ theme: next
 deploy:
   type: git
   repo: https://github.com/topcatv/topcatv.github.com.git
+
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
