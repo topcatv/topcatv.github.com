@@ -16,7 +16,7 @@ before_install:
   - git config --global user.name topcatv
   - git config --global user.email topcatv@gmail.com
 install:
-  - npm install hexo-cli -g
-  - npm install
+  - npm install hexo-cli yarn -g
+  - yarn
 script:
-  - YUQUE_TOKEN=$yuque_token npm run deploy
+  - YUQUE_TOKEN=$yuque_token yarn run deploy
