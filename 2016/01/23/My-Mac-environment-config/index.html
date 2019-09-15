@@ -6,10 +6,11 @@
 
 
 <html class="theme-next muse use-motion" lang="zh-CN">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -27,8 +28,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -51,9 +52,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
@@ -104,7 +105,7 @@
 
 
   
-  <meta name="keywords" content="mac," />
+  <meta name="keywords" content="mac,">
 
 
 <meta name="description" content="MacBookPro已入手多时，现在也已用的比较熟练了，这里记录一下我的Mac的开发环境配置。下面将从几个方面记录一下板沙的成果。  基础软件HomeBrew、iterm2、ohmyzsh 美化powerline 系统工具Mackup 开发工具MacVim或Vim、Sublime Text 3">
@@ -127,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="http://topcatv.github.com/2016/01/23/My-Mac-environment-config/"/>
+  <link rel="canonical" href="http://topcatv.github.com/2016/01/23/My-Mac-environment-config/">
 
 
 
@@ -192,7 +193,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">老男将的叨叨</span>
         <span class="logo-line-after"><i></i></span>
@@ -221,25 +222,25 @@
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
         </li>
       
         
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
         </li>
       
         
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
         </li>
       
 
@@ -289,7 +290,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘易(Roy Liu)">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09">
     </span>
 
@@ -324,7 +325,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -416,19 +417,31 @@
 <li>开发工具MacVim或Vim、<a href="http://www.sublimetext.com/3" target="_blank" rel="noopener">Sublime Text 3</a></li>
 </ol>
 <a id="more"></a>
+
+
 <h1 id="安装基础软件"><a href="#安装基础软件" class="headerlink" title="安装基础软件"></a>安装基础软件</h1><hr>
-<h2 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h2><p>首先安装Homebrew，安装了Homebrew后就可以通过它来方便的安装其它的库了。(<strong>注意：安装Homebrew的前提是我们先要在AppStore里安装XCode</strong>)<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure></p>
-<p>get <a href="http://caskroom.io/" target="_blank" rel="noopener">cask</a>，cask可以帮助我们安装一些软件程序，比如Chrome<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap caskroom/cask</span><br></pre></td></tr></table></figure></p>
-<p>安装Chrome<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install google-chrome</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h2><p>首先安装Homebrew，安装了Homebrew后就可以通过它来方便的安装其它的库了。(<strong>注意：安装Homebrew的前提是我们先要在AppStore里安装XCode</strong>)</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+
+<p>get <a href="http://caskroom.io/" target="_blank" rel="noopener">cask</a>，cask可以帮助我们安装一些软件程序，比如Chrome</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap caskroom/cask</span><br></pre></td></tr></table></figure>
+
+<p>安装Chrome</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install google-chrome</span><br></pre></td></tr></table></figure>
+
 <p>我这里还通过Homebrew安装了<a href="https://github.com/lra/mackup" target="_blank" rel="noopener">mackup</a>，python，nvm，gradle，maven，macvim</p>
 <h2 id="使用Homebrew安装iTerm2"><a href="#使用Homebrew安装iTerm2" class="headerlink" title="使用Homebrew安装iTerm2"></a>使用Homebrew安装iTerm2</h2><hr>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install iterm2</span><br></pre></td></tr></table></figure>
+
 <h2 id="安装ohmyzsh"><a href="#安装ohmyzsh" class="headerlink" title="安装ohmyzsh"></a>安装ohmyzsh</h2><hr>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure>
+
 <p>到此为至基础库和软件都已安装完成</p>
 <h1 id="安装powerline"><a href="#安装powerline" class="headerlink" title="安装powerline"></a>安装powerline</h1><hr>
 <p>详细安装<a href="https://github.com/powerline/powerline" target="_blank" rel="noopener">powerline</a>的方法要以参考他的<a href="https://powerline.readthedocs.org/en/latest/installation/osx.html" target="_blank" rel="noopener">官方文档</a>，我这里先简单的记录一下</p>
-<p>首先要有python前面已通过Homebrew安装过了，下面通过<a href="https://pypi.python.org/pypi/pip/" target="_blank" rel="noopener">pip</a>安装。<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --user powerline-status</span><br></pre></td></tr></table></figure></p>
+<p>首先要有python前面已通过Homebrew安装过了，下面通过<a href="https://pypi.python.org/pypi/pip/" target="_blank" rel="noopener">pip</a>安装。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --user powerline-status</span><br></pre></td></tr></table></figure>
+
 <p>但是现在还是没有出来效果，我们还需要去安装<a href="https://github.com/powerline/fonts" target="_blank" rel="noopener">Powerline fonts</a>，从github上clone下面找到相应的字体文件在finder里双击就可以安装了。</p>
 <p>安装好了后我们还要打开iterm2来做一些设置。</p>
 <ol>
@@ -578,9 +591,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09"
-                alt="刘易(Roy Liu)" />
+              <img class="site-author-image" itemprop="image" src="http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09" alt="刘易(Roy Liu)">
             
               <p class="site-author-name" itemprop="name">刘易(Roy Liu)</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -593,7 +604,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -677,7 +688,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">22</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -717,7 +732,7 @@
           
             <div class="cc-license motion-element" itemprop="license">
               <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
               </a>
             </div>
           
@@ -763,7 +778,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -777,7 +792,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">23k</span>
   
 
   
@@ -788,7 +803,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">0:17</span>
+    <span title="站点总阅读时长">0:23</span>
   
 </div>
 

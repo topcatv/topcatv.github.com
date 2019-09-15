@@ -6,10 +6,11 @@
 
 
 <html class="theme-next muse use-motion" lang="zh-CN">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -27,8 +28,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -51,9 +52,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
@@ -104,7 +105,7 @@
 
 
   
-  <meta name="keywords" content="ubuntu,vim,linux,vundle," />
+  <meta name="keywords" content="ubuntu,vim,linux,vundle,">
 
 
 <meta name="description" content="今天来介绍一下用怎么用Vundle来管理vim的各种插件 安装Vundle:1git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle">
@@ -125,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="http://topcatv.github.com/2013/10/09/use-vundle-manage-vim-plugins/"/>
+  <link rel="canonical" href="http://topcatv.github.com/2013/10/09/use-vundle-manage-vim-plugins/">
 
 
 
@@ -190,7 +191,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">老男将的叨叨</span>
         <span class="logo-line-after"><i></i></span>
@@ -219,25 +220,25 @@
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
         </li>
       
         
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
         </li>
       
         
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
         </li>
       
 
@@ -287,7 +288,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘易(Roy Liu)">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09">
     </span>
 
@@ -322,7 +323,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -415,8 +416,11 @@
       
         <p>今天来介绍一下用怎么用Vundle来管理vim的各种插件</p>
 <h3 id="安装Vundle"><a href="#安装Vundle" class="headerlink" title="安装Vundle:"></a>安装Vundle:</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/gmarik/</span>vundle.git ~<span class="regexp">/.vim/</span>bundle<span class="regexp">/vundle</span></span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
+
 <h3 id="配置bundles："><a href="#配置bundles：" class="headerlink" title="配置bundles："></a>配置bundles：</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> nocompatible               <span class="comment">" be iMproved</span></span><br><span class="line"><span class="keyword">filetype</span> off                   <span class="comment">" required!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> rtp+=~/.<span class="keyword">vim</span>/bundle/vundle/</span><br><span class="line"><span class="keyword">call</span> vundle#rc()</span><br><span class="line"></span><br><span class="line"><span class="comment">" let Vundle manage Vundle</span></span><br><span class="line"><span class="comment">" required! </span></span><br><span class="line">Bundle <span class="string">'gmarik/vundle'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" My Bundles here:</span></span><br><span class="line"><span class="comment">"</span></span><br><span class="line"><span class="comment">" original repos on github</span></span><br><span class="line">Bundle <span class="string">'tpope/vim-fugitive'</span></span><br><span class="line">Bundle <span class="string">'Lokaltog/vim-easymotion'</span></span><br><span class="line">Bundle <span class="string">'rstacruz/sparkup'</span>, &#123;<span class="string">'rtp'</span>: <span class="string">'vim/'</span>&#125;</span><br><span class="line">Bundle <span class="string">'tpope/vim-rails.git'</span></span><br><span class="line"><span class="comment">" vim-scripts repos</span></span><br><span class="line">Bundle <span class="string">'L9'</span></span><br><span class="line">Bundle <span class="string">'FuzzyFinder'</span></span><br><span class="line"><span class="comment">" non github repos</span></span><br><span class="line">Bundle <span class="string">'git://git.wincent.com/command-t.git'</span></span><br><span class="line"><span class="comment">" git repos on your local machine (ie. when working on your own plugin)</span></span><br><span class="line">Bundle <span class="string">'file:///Users/gmarik/path/to/plugin'</span></span><br><span class="line"><span class="comment">" ...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">filetype</span> plugin <span class="built_in">indent</span> <span class="keyword">on</span>     <span class="comment">" required!</span></span><br><span class="line"><span class="comment">"</span></span><br><span class="line"><span class="comment">" Brief help</span></span><br><span class="line"><span class="comment">" :BundleList          - list configured bundles</span></span><br><span class="line"><span class="comment">" :BundleInstall(!)    - install(update) bundles</span></span><br><span class="line"><span class="comment">" :BundleSearch(!) foo - search(or refresh cache first) for foo</span></span><br><span class="line"><span class="comment">" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles</span></span><br><span class="line"><span class="comment">"</span></span><br><span class="line"><span class="comment">" see :h vundle for more details or wiki for FAQ</span></span><br><span class="line"><span class="comment">" <span class="doctag">NOTE:</span> comments after Bundle command are not allowed..</span></span><br></pre></td></tr></table></figure>
+
 <p>可以到<a href="http://vim-scripts.org/vim/scripts.html" target="_blank" rel="noopener">这里</a>查找你需要的插件</p>
 <h3 id="安装配置的bundles："><a href="#安装配置的bundles：" class="headerlink" title="安装配置的bundles："></a>安装配置的bundles：</h3><p>启动<code>vim</code>，执行<code>:BundleInstall</code></p>
 <h5 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h5><ol>
@@ -551,9 +555,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09"
-                alt="刘易(Roy Liu)" />
+              <img class="site-author-image" itemprop="image" src="http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09" alt="刘易(Roy Liu)">
             
               <p class="site-author-name" itemprop="name">刘易(Roy Liu)</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -566,7 +568,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -650,7 +652,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">22</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -690,7 +696,7 @@
           
             <div class="cc-license motion-element" itemprop="license">
               <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
               </a>
             </div>
           
@@ -716,7 +722,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Vundle"><span class="nav-number">1.</span> <span class="nav-text">安装Vundle:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置bundles："><span class="nav-number">2.</span> <span class="nav-text">配置bundles：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置的bundles："><span class="nav-number">3.</span> <span class="nav-text">安装配置的bundles：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考"><span class="nav-number">3.0.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Vundle"><span class="nav-number">1.</span> <span class="nav-text">安装Vundle:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置bundles："><span class="nav-number">2.</span> <span class="nav-text">配置bundles：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置的bundles："><span class="nav-number">3.</span> <span class="nav-text">安装配置的bundles：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考"><span class="nav-number">3.0.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -736,7 +742,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -750,7 +756,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">23k</span>
   
 
   
@@ -761,7 +767,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">0:17</span>
+    <span title="站点总阅读时长">0:23</span>
   
 </div>
 

@@ -6,10 +6,11 @@
 
 
 <html class="theme-next muse use-motion" lang="zh-CN">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -27,8 +28,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -51,9 +52,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
@@ -104,7 +105,7 @@
 
 
   
-  <meta name="keywords" content="mac,zsh,vs code," />
+  <meta name="keywords" content="mac,zsh,vs code,">
 
 
 <meta name="description" content="我们在mac上使用Visual Studio Code时希望在zsh中通过命令快速打开一个文件或文件夹如何做到？">
@@ -125,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="http://topcatv.github.com/2018/02/14/vscode-in-zsh/"/>
+  <link rel="canonical" href="http://topcatv.github.com/2018/02/14/vscode-in-zsh/">
 
 
 
@@ -190,7 +191,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">老男将的叨叨</span>
         <span class="logo-line-after"><i></i></span>
@@ -219,25 +220,25 @@
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
         </li>
       
         
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
         </li>
       
         
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
         </li>
       
 
@@ -287,7 +288,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘易(Roy Liu)">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09">
     </span>
 
@@ -322,7 +323,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -372,7 +373,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">507</span>
+                <span title="字数统计">511</span>
               
 
               
@@ -406,8 +407,12 @@
       
 
       
-        <p>我们在mac上使用Visual Studio Code时希望在zsh中通过命令快速打开一个文件或文件夹如何做到？<br><a id="more"></a></p>
-<p>我们可以在我们的<code>.zshrc</code>文件中加入如下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> code &#123;</span><br><span class="line">    <span class="keyword">if</span> [[ <span class="variable">$#</span> = 0 ]]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        open -a <span class="string">"Visual Studio Code"</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">local</span> argPath=<span class="string">"<span class="variable">$1</span>"</span></span><br><span class="line">        [[ <span class="variable">$1</span> = /* ]] &amp;&amp; argPath=<span class="string">"<span class="variable">$1</span>"</span> || argPath=<span class="string">"<span class="variable">$PWD</span>/<span class="variable">$&#123;1#./&#125;</span>"</span></span><br><span class="line">        open -a <span class="string">"Visual Studio Code"</span> <span class="string">"<span class="variable">$argPath</span>"</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>我们在mac上使用Visual Studio Code时希望在zsh中通过命令快速打开一个文件或文件夹如何做到？</p>
+<a id="more"></a>
+
+<p>我们可以在我们的<code>.zshrc</code>文件中加入如下代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> code &#123;</span><br><span class="line">    <span class="keyword">if</span> [[ <span class="variable">$#</span> = 0 ]]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        open -a <span class="string">"Visual Studio Code"</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">local</span> argPath=<span class="string">"<span class="variable">$1</span>"</span></span><br><span class="line">        [[ <span class="variable">$1</span> = /* ]] &amp;&amp; argPath=<span class="string">"<span class="variable">$1</span>"</span> || argPath=<span class="string">"<span class="variable">$PWD</span>/<span class="variable">$&#123;1#./&#125;</span>"</span></span><br><span class="line">        open -a <span class="string">"Visual Studio Code"</span> <span class="string">"<span class="variable">$argPath</span>"</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这样在zsh中我们可以使用下面的命令打开 <strong>Visual Studio Code</strong></p>
 <blockquote>
 <p><code>code</code> – 打开 Visual Studio Code<br><code>code .</code> – 在 Visual Studio Code 中打开当前目录<br><code>code somefile</code> – 在 Visual Studio Code 中打开somefile</p>
@@ -474,6 +479,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/01/14/data-capacity/" rel="prev" title="系统数据容量获取">
+                系统数据容量获取 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -526,9 +535,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09"
-                alt="刘易(Roy Liu)" />
+              <img class="site-author-image" itemprop="image" src="http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09" alt="刘易(Roy Liu)">
             
               <p class="site-author-name" itemprop="name">刘易(Roy Liu)</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -541,7 +548,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -625,7 +632,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">22</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -665,7 +676,7 @@
           
             <div class="cc-license motion-element" itemprop="license">
               <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
               </a>
             </div>
           
@@ -695,7 +706,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -709,7 +720,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">23k</span>
   
 
   
@@ -720,7 +731,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">0:17</span>
+    <span title="站点总阅读时长">0:23</span>
   
 </div>
 
