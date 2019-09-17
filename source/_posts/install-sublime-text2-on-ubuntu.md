@@ -1,7 +1,7 @@
 title: 在Ubuntu上安装Sublime Text2并解决无法使用fcitx中文输入法问题
 date: 2013-10-08 11:05:29
 categories: [ubuntu]
-tags: [ubuntu, ficxt, sublime text2]
+tags: [ubuntu,ficxt,sublime text2]
 ---
 
 ### 第一步 下载安装
@@ -101,8 +101,8 @@ gdk_region_get_clipbox (const GdkRegion *region,
   rect.x = rectangle->x;
   rect.y = rectangle->y;
   rect.width = 0;
-  rect.height = rectangle->height; 
-  //The caret width is 2; 
+  rect.height = rectangle->height;
+  //The caret width is 2;
   //Maybe sometimes we will make a mistake, but for most of the time, it should be the caret.
   if(rectangle->width == 2 && GTK_IS_IM_CONTEXT(local_context)) {
         gtk_im_context_set_cursor_location(local_context, rectangle);
@@ -141,7 +141,7 @@ void gtk_im_context_set_client_window (GtkIMContext *context,
     gtk_im_context_focus_in(context);
     local_context = context;
   }
-  gdk_window_add_filter (window, event_filter, context); 
+  gdk_window_add_filter (window, event_filter, context);
 }
 ```
 

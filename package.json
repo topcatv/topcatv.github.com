@@ -34,6 +34,7 @@
   "scripts": {
     "clean": "hexo clean",
     "clean:yuque": "yuque-hexo clean",
+    "deploy:hexo": "hexo deploy -g",
     "deploy": "yuque-hexo sync && hexo deploy -g",
     "publish": "npm run clean && npm run deploy",
     "dev": "hexo s",
