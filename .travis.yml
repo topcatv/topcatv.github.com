@@ -4,6 +4,7 @@ node_js:
 branches:
   only:
   - blog
+  - master
 cache:
   directories:
     - node_modules
