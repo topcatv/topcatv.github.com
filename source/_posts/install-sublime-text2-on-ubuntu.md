@@ -34,7 +34,7 @@ sudo vim /usr/share/applications/sublime.desktop
 ```
 
 文件内容如下
-```
+``` bash
 [Desktop Entry]
 Version=1.0
 Name=Sublime Text 2
@@ -147,23 +147,23 @@ void gtk_im_context_set_client_window (GtkIMContext *context,
 
 - 编译sublime-imfix.c
 安装必要的编译包
-```
+``` bash
 sudo apt-get install build-essential
 sudo apt-get install libgtk2.0-dev
 ```
 
 编译
-```
+``` bash
 gcc -shared -o libsublime-imfix.so sublime-imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
 ```
 
 - 将libsublime-imfix.so移动到/usr/lib/下
-```
+``` bash
 sudo mv libsublime-imfix.so /usr/lib/
 ```
 
 - 修改启动器文件内容
-```
+``` bash
 [Desktop Entry]
 Version=1.0
 Name=Sublime Text 2
