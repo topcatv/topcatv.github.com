@@ -20,7 +20,7 @@ function code {
     fi
 }
 ```
-这样在zsh中我们可以使用下面的命令打开 **Visual Studio Code**
+这样在zsh中我们可以使用下面的命令打开 **Visual Studio Code**
 
 > `code` – 打开 Visual Studio Code
 > `code .` – 在 Visual Studio Code 中打开当前目录

@@ -5,7 +5,7 @@ tags: sublime,BracketHighlighter
 
 BracketHighlighter是一款括号匹配高亮显示的sublime插件
 下面是官网上的一个截图
-![BracketHighlighter](https://camo.githubusercontent.com/771f9df16f29a134369cbcb0913f55932d156983/687474703a2f2f646c2e64726f70626f782e636f6d2f752f3334323639382f427261636b6574486967686c6967687465722f4578616d706c65312e706e67)
+![BracketHighlighter](http://facelessuser.github.io/BracketHighlighter/images/Example1.png)
 
 今天就介绍一下这个插件在mac下如何安装到Sublime Text3下
 <!-- more -->
