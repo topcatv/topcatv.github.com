@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Hexo, NexT">
+
+
+<meta name="description" content="Guava简介  The Guava project contains several of Google’s core libraries that we rely on in our Java-based projects: collections, caching, primitives support, concurrency libraries, common annotations,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Guava学习记录">
+<meta property="og:url" content="http://topcatv.github.com/2019/09/29/yuque/Guava学习记录/index.html">
+<meta property="og:site_name" content="老男将的叨叨">
+<meta property="og:description" content="Guava简介  The Guava project contains several of Google’s core libraries that we rely on in our Java-based projects: collections, caching, primitives support, concurrency libraries, common annotations,">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/489197/1569752130604-bbcd2b37-9100-4405-a0de-b87b16ef23d9.png">
+<meta property="og:updated_time" content="2019-10-13T09:26:27.224Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Guava学习记录">
+<meta name="twitter:description" content="Guava简介  The Guava project contains several of Google’s core libraries that we rely on in our Java-based projects: collections, caching, primitives support, concurrency libraries, common annotations,">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2019/png/489197/1569752130604-bbcd2b37-9100-4405-a0de-b87b16ef23d9.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://topcatv.github.com/2019/09/29/yuque/Guava学习记录/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Guava学习记录 | 老男将的叨叨</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">老男将的叨叨</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生命不息 折腾不止</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://topcatv.github.com/2019/09/29/yuque/Guava学习记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘易(Roy Liu)">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老男将的叨叨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Guava学习记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T14:40:11+08:00">2019-09-29</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/09/29/yuque/Guava学习记录/" class="leancloud_visitors" data-flag-title="Guava学习记录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">11k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:11</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Guava简介<br></p>
+<blockquote>
+<p>The Guava project contains several of Google’s core libraries that we rely on in our Java-based projects: collections, caching, primitives support, concurrency libraries, common annotations, string processing, I/O, and so forth. Each of these tools really do get used every day by Googlers, in production services.<br><br>But trawling through Javadoc isn’t always the most effective way to learn how to make best use of a library. Here, we try to provide readable and pleasant explanations of some of the most popular and most powerful features of Guava.</p>
+</blockquote>
+<p>Guava工程包含了若干被Google的 Java项目广泛依赖 的核心库，例如：集合 [collections] 、缓存 [caching] 、原生类型支持 [primitives support] 、并发库 [concurrency libraries] 、通用注解 [common annotations] 、字符串处理 [string processing] 、I/O 等等。 所有这些工具每天都在被Google的工程师应用在产品服务中。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/489197/1569752130604-bbcd2b37-9100-4405-a0de-b87b16ef23d9.png" alt><br><a name="nDkTH"></a></p>
+<h2 id="基本工具"><a href="#基本工具" class="headerlink" title="基本工具"></a>基本工具</h2><p><a name="FKkBy"></a></p>
+<h3 id="避免null"><a href="#避免null" class="headerlink" title="避免null"></a>避免null</h3><ul>
+<li>返回的集合类型不要使用null<ul>
+<li>是不是没有记录？？比较含糊</li>
+</ul>
+</li>
+<li>set中不要使用null<ul>
+<li>如果有多个null放到set无法区分，如果是一个变量放入set，你不知道他是不是null</li>
+</ul>
+</li>
+<li>map中的key不要使用null<ul>
+<li>多个null的key被覆盖，如果是变量作为key，你不知道他是不是null</li>
+</ul>
+</li>
+</ul>
+<p>示例:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Optional&lt;Object&gt; opt = Optional.fromNullable(<span class="keyword">null</span>);</span><br><span class="line">assertFalse(<span class="string">"不应该有"</span>, opt.isPresent());</span><br><span class="line">assertEquals(<span class="string">"null"</span>, opt.or(<span class="string">"null"</span>));</span><br><span class="line">opt = Optional.absent();</span><br><span class="line">assertFalse(<span class="string">"不应该有"</span>, opt.isPresent());</span><br><span class="line">opt = Optional.of(<span class="string">"null"</span>);</span><br><span class="line">assertEquals(<span class="string">"null"</span>, opt.get());</span><br><span class="line">Optional.of(<span class="keyword">null</span>);</span><br></pre></td></tr></table></figure>
+
+<p>对于jdk1.8来说可以使用java.util.Optional来代替<br><a name="9e5na"></a></p>
+<h2 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h2><p><a name="pvLld"></a></p>
+<h3 id="参数检查"><a href="#参数检查" class="headerlink" title="参数检查"></a>参数检查</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = -<span class="number">1</span>, j = -<span class="number">32</span>;</span><br><span class="line">assertThrows(IllegalArgumentException.class, () -&gt; checkArgument(i &gt;= <span class="number">0</span>, <span class="string">"参数是%s，预期是一个正数"</span>, i));</span><br><span class="line">assertThrows(IllegalArgumentException.class, () -&gt; checkArgument(i &lt; j, <span class="string">"需要i &lt; j，但是 %s &gt;= %s"</span>, i, j));</span><br></pre></td></tr></table></figure>
+
+<p>这些可以帮助方法快速失败</p>
+<p><a name="X0Wxo"></a></p>
+<h2 id="通用Object方法"><a href="#通用Object方法" class="headerlink" title="通用Object方法"></a>通用Object方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">assertTrue(Objects.equal(<span class="string">"a"</span>, <span class="string">"a"</span>)); <span class="comment">// returns true</span></span><br><span class="line">assertFalse(Objects.equal(<span class="keyword">null</span>, <span class="string">"a"</span>)); <span class="comment">// returns false</span></span><br><span class="line">assertFalse(Objects.equal(<span class="string">"a"</span>, <span class="keyword">null</span>)); <span class="comment">// returns false</span></span><br><span class="line">assertTrue(Objects.equal(<span class="keyword">null</span>, <span class="keyword">null</span>)); <span class="comment">// returns true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestPojo</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">TestPojo</span>&gt; </span>&#123;</span><br><span class="line">    </span><br><span class="line">    ...</span><br><span class="line">        </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> MoreObjects.toStringHelper(<span class="keyword">this</span>)</span><br><span class="line">                .add(<span class="string">"desc"</span>, desc)</span><br><span class="line">                .add(<span class="string">"user"</span>, user)</span><br><span class="line">                .add(<span class="string">"price"</span>, price)</span><br><span class="line">                .add(<span class="string">"title"</span>, title)</span><br><span class="line">                .add(<span class="string">"buyCount"</span>, buyCount)</span><br><span class="line">                .add(<span class="string">"viewCount"</span>, viewCount)</span><br><span class="line">                .add(<span class="string">"contentSize"</span>, contentSize)</span><br><span class="line">                .add(<span class="string">"img"</span>, img)</span><br><span class="line">                .add(<span class="string">"category"</span>, category)</span><br><span class="line">                .add(<span class="string">"createdAt"</span>, createdAt)</span><br><span class="line">                .add(<span class="string">"updatedAt"</span>, updatedAt)</span><br><span class="line">                .add(<span class="string">"finishedAt"</span>, finishedAt)</span><br><span class="line">                .add(<span class="string">"isFinished"</span>, isFinished)</span><br><span class="line">                .add(<span class="string">"isDeleted"</span>, isDeleted)</span><br><span class="line">                .add(<span class="string">"isHot"</span>, isHot)</span><br><span class="line">                .add(<span class="string">"isPublish"</span>, isPublish)</span><br><span class="line">                .add(<span class="string">"isShow"</span>, isShow)</span><br><span class="line">                .add(<span class="string">"profile"</span>, profile)</span><br><span class="line">                .add(<span class="string">"lastSectionCount"</span>, lastSectionCount)</span><br><span class="line">                .add(<span class="string">"pv"</span>, pv)</span><br><span class="line">                .add(<span class="string">"timeLimitDiscountFirstDay"</span>, timeLimitDiscountFirstDay)</span><br><span class="line">                .add(<span class="string">"timeLimitDiscount"</span>, timeLimitDiscount)</span><br><span class="line">                .add(<span class="string">"wechatSignal"</span>, wechatSignal)</span><br><span class="line">                .add(<span class="string">"wechatImg"</span>, wechatImg)</span><br><span class="line">                .add(<span class="string">"wechatImgDesc"</span>, wechatImgDesc)</span><br><span class="line">                .add(<span class="string">"url"</span>, url)</span><br><span class="line">                .add(<span class="string">"section"</span>, section)</span><br><span class="line">                .add(<span class="string">"tags"</span>, tags)</span><br><span class="line">                .toString();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(TestPojo that)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ComparisonChain.start()</span><br><span class="line">            .compare(<span class="keyword">this</span>.buyCount, that.buyCount)</span><br><span class="line">            .compare(<span class="keyword">this</span>.contentSize, that.contentSize)</span><br><span class="line">            .result();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对Objects来说如果使用的是jdk1.7，那么可以使用java.util.Object来代替</p>
+<p><a name="MKJno"></a></p>
+<h2 id="排序器"><a href="#排序器" class="headerlink" title="排序器"></a>排序器</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">String[] array = &#123;<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="keyword">null</span>, <span class="string">"3"</span>, <span class="string">"12"</span>, <span class="keyword">null</span>, <span class="string">"14"</span>&#125;;</span><br><span class="line">assertThrows(NullPointerException.class, () -&gt; Arrays.sort(array, Ordering.natural()));</span><br><span class="line">logger.info(Arrays.toString(array)); <span class="comment">// [1, 2, null, 3, 12, null, 14]</span></span><br><span class="line"></span><br><span class="line">Arrays.sort(array, Ordering.natural().nullsFirst());</span><br><span class="line">assertArrayEquals(<span class="keyword">new</span> String[]&#123;<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="string">"1"</span>, <span class="string">"12"</span>, <span class="string">"14"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>&#125;, array);</span><br><span class="line">logger.info(Arrays.toString(array)); <span class="comment">// [null, null, 1, 12, 14, 2, 3]</span></span><br><span class="line"></span><br><span class="line">Arrays.sort(array, Ordering.natural().nullsLast());</span><br><span class="line">assertArrayEquals(<span class="keyword">new</span> String[]&#123;<span class="string">"1"</span>, <span class="string">"12"</span>, <span class="string">"14"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>, <span class="keyword">null</span>, <span class="keyword">null</span>&#125;, array);</span><br><span class="line">logger.info(Arrays.toString(array)); <span class="comment">// [1, 12, 14, 2, 3, null, null]</span></span><br><span class="line"></span><br><span class="line">Arrays.sort(array, Ordering.natural().reverse().nullsLast());</span><br><span class="line">assertArrayEquals(<span class="keyword">new</span> String[]&#123;<span class="string">"3"</span>, <span class="string">"2"</span>, <span class="string">"14"</span>, <span class="string">"12"</span>, <span class="string">"1"</span>, <span class="keyword">null</span>, <span class="keyword">null</span>&#125;, array);</span><br><span class="line">logger.info(Arrays.toString(array)); <span class="comment">// [3, 2, 14, 12, 1, null, null]</span></span><br><span class="line"></span><br><span class="line">Arrays.sort(array, Ordering.natural().nullsLast().reverse());</span><br><span class="line">assertArrayEquals(<span class="keyword">new</span> String[]&#123;<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="string">"3"</span>, <span class="string">"2"</span>, <span class="string">"14"</span>, <span class="string">"12"</span>, <span class="string">"1"</span>&#125;, array);</span><br><span class="line">logger.info(Arrays.toString(array)); <span class="comment">// [null, null, 3, 2, 14, 12, 1]</span></span><br><span class="line"></span><br><span class="line">Arrays.sort(array, Ordering.natural().onResultOf(<span class="keyword">new</span> Function&lt;String, Integer&gt;() &#123;</span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">apply</span><span class="params">(@Nullable String input)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Integer.valueOf(Optional.fromNullable(input).or(<span class="string">"-1"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;));</span><br><span class="line">assertArrayEquals(<span class="keyword">new</span> String[]&#123;<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>, <span class="string">"12"</span>, <span class="string">"14"</span>&#125;, array);</span><br><span class="line">logger.info(Arrays.toString(array)); <span class="comment">// [null, null, 1, 2, 3, 12, 14]</span></span><br></pre></td></tr></table></figure>
+
+<p><a name="G8N5o"></a></p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>好像也没有什么可说的</p>
+<p><a name="4M7Al"></a></p>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p><a name="JUY4S"></a></p>
+<h2 id="不可变集合"><a href="#不可变集合" class="headerlink" title="不可变集合"></a>不可变集合</h2><p>不可变对象有以下优点：</p>
+<ol>
+<li>被第三方库使用时是安全的（不会被修改了还不知道 ）</li>
+<li>线程安全：多线程使用时没有条件竞争风险</li>
+<li>无需支持变化，能节约时间与空间。所有的不可变集合比可变集合的实现在内存上效率更好</li>
+<li>可用作常量</li>
+</ol>
+<p>构造对象的不可变拷贝是一个好的防御性编程技巧。<br>JDK也提供了Collections.unmodifiableXXX方法把集合包装为不可变形式，但这些方法有以下问题：</p>
+<ol>
+<li>使用不便</li>
+<li>不安全，不一定是真正的不可变</li>
+<li>低效，数据结构仍是在可变集合基础上实现的</li>
+</ol>
+<p>注意：所有的Guava的不可变集合都不支持null值元素，如果发现null值会快速失败</p>
+<p>使用方式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ImmutableSet.copyOf(set);</span><br><span class="line">ImmutableSet.of(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>);</span><br><span class="line">ImmutableMap.of(<span class="string">"a"</span>, <span class="number">1</span>, <span class="string">"b"</span>, <span class="number">2</span>);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> ImmutableSet&lt;Color&gt; GOOGLE_COLORS =</span><br><span class="line">   ImmutableSet.&lt;Color&gt;builder()</span><br><span class="line">       .addAll(WEBSAFE_COLORS)</span><br><span class="line">       .add(<span class="keyword">new</span> Color(<span class="number">0</span>, <span class="number">191</span>, <span class="number">255</span>))</span><br><span class="line">       .build();</span><br></pre></td></tr></table></figure>
+
+<p><a name="SjhiZ"></a></p>
+<h3 id="新的集合类型"><a href="#新的集合类型" class="headerlink" title="新的集合类型"></a>新的集合类型</h3><p>multisets, multimaps, tables, bidirectional maps<br><a name="vSxAc"></a></p>
+<h2 id="Multiset"><a href="#Multiset" class="headerlink" title="Multiset"></a>Multiset</h2><p>继承于collection，这里的set是数学中集合的意思，并不是java不是Set接口。（把Multiset当成List一样用就可以了）<br>用于计数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Integer&gt; counts = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line"><span class="keyword">for</span> (String word : words) &#123;</span><br><span class="line">  Integer count = counts.get(word);</span><br><span class="line">  <span class="keyword">if</span> (count == <span class="keyword">null</span>) &#123;</span><br><span class="line">    counts.put(word, <span class="number">1</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    counts.put(word, count + <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用Multset</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = Lists.newArrayList(<span class="string">"hello"</span>, <span class="string">"guava"</span>, <span class="string">"hello"</span>, <span class="string">"world"</span>);</span><br><span class="line">HashMultiset&lt;String&gt; multiset = HashMultiset.create();</span><br><span class="line">multiset.addAll(list);</span><br><span class="line">assertEquals(<span class="number">2</span>, multiset.count(<span class="string">"hello"</span>));</span><br><span class="line">assertEquals(<span class="number">1</span>, multiset.count(<span class="string">"guava"</span>));</span><br><span class="line">assertEquals(<span class="number">0</span>, multiset.count(<span class="string">"guave"</span>));</span><br></pre></td></tr></table></figure>
+
+<p>Multiset的实现有</p>
+<table>
+<thead>
+<tr>
+<th><strong>Map</strong></th>
+<th><strong>Corresponding Multiset</strong></th>
+<th><strong>Supports null elements</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HashMap</td>
+<td>HashMultiset</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>TreeMap</td>
+<td>TreeMultiset</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>LinkedHashMap</td>
+<td>LinkedHashMultiset</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>ConcurrentHashMap</td>
+<td>ConcurrentHashMultiset</td>
+<td>No</td>
+</tr>
+<tr>
+<td>ImmutableMap</td>
+<td>ImmutableMultiset</td>
+<td>No</td>
+</tr>
+</tbody></table>
+<p><a name="dFEuW"></a></p>
+<h4 id="SortedMultiset"><a href="#SortedMultiset" class="headerlink" title="SortedMultiset"></a>SortedMultiset</h4><p>它是Multiset的一个变种，能按给定的范围高效的获取子集</p>
+<p><a name="Z32Gd"></a></p>
+<h2 id="Multimap"><a href="#Multimap" class="headerlink" title="Multimap"></a>Multimap</h2><p>每个有经验的Java程序员都在某处实现过Map&lt;K, List<v>&gt;或Map&lt;K, Set<v>&gt;，比如，我要做一个归类操作，把复合某种特征的数据放归到一起，就可以使用这个接口，Multimap是把键映射到任意多个值的一般方式。<br>不会有任何键映射到空集合：一个键要么至少到一个值，要么根本就不在Multimap中。<br>很少会直接使用Multimap接口，更多时候你会用ListMultimap或SetMultimap接口，它们分别把键映射到List或Set。</v></v></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = Lists.newArrayList(<span class="string">"hello"</span>, <span class="string">"guava"</span>, <span class="string">"hello"</span>, <span class="string">"world"</span>);</span><br><span class="line">HashMultiset&lt;String&gt; multiset = HashMultiset.create();</span><br><span class="line">multiset.addAll(list);</span><br><span class="line">assertEquals(<span class="number">2</span>, multiset.count(<span class="string">"hello"</span>));</span><br><span class="line">assertEquals(<span class="number">1</span>, multiset.count(<span class="string">"guava"</span>));</span><br><span class="line">assertEquals(<span class="number">0</span>, multiset.count(<span class="string">"guave"</span>));</span><br><span class="line"></span><br><span class="line">Multimap&lt;Integer, Integer&gt; listMultimap = MultimapBuilder.treeKeys().arrayListValues().build();</span><br><span class="line">Multimap&lt;Integer, Integer&gt; setMultimap = MultimapBuilder.hashKeys().hashSetValues().build();</span><br><span class="line"></span><br><span class="line">listMultimap.put(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">listMultimap.put(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">listMultimap.put(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">listMultimap.put(<span class="number">1</span>, <span class="number">4</span>);</span><br><span class="line">listMultimap.put(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">listMultimap.put(<span class="number">3</span>, <span class="number">3</span>);</span><br><span class="line">listMultimap.put(<span class="number">4</span>, <span class="number">3</span>);</span><br><span class="line">listMultimap.put(<span class="number">5</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">setMultimap.put(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">setMultimap.put(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">setMultimap.put(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">setMultimap.put(<span class="number">1</span>, <span class="number">4</span>);</span><br><span class="line">setMultimap.put(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">setMultimap.put(<span class="number">3</span>, <span class="number">3</span>);</span><br><span class="line">setMultimap.put(<span class="number">4</span>, <span class="number">3</span>);</span><br><span class="line">setMultimap.put(<span class="number">5</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">assertEquals(<span class="number">4</span>, listMultimap.get(<span class="number">1</span>).size());</span><br><span class="line">assertEquals(<span class="number">0</span>, listMultimap.get(<span class="number">6</span>).size());</span><br><span class="line">assertNull(listMultimap.asMap().get(<span class="number">6</span>));</span><br><span class="line"></span><br><span class="line">assertEquals(<span class="number">3</span>, setMultimap.get(<span class="number">1</span>).size());</span><br><span class="line"><span class="comment">// 对值视图集合进行的修改最终都会反映到底层的Multimap</span></span><br><span class="line">setMultimap.get(<span class="number">1</span>).remove(<span class="number">2</span>);</span><br><span class="line">assertEquals(<span class="number">2</span>, setMultimap.get(<span class="number">1</span>).size());</span><br><span class="line"></span><br><span class="line">assertTrue(listMultimap.containsKey(<span class="number">1</span>));</span><br><span class="line">assertFalse(listMultimap.containsKey(<span class="number">6</span>));</span><br></pre></td></tr></table></figure>
+
+<p><a name="cEoWH"></a></p>
+<h2 id="BiMap"><a href="#BiMap" class="headerlink" title="BiMap"></a>BiMap</h2><p>传统上，实现键值对的双向映射需要维护两个单独的map，并保持它们间的同步。但这种方式很容易出错，而且对于值已经在map中的情况，会变得非常混乱。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Integer&gt; nameToId = Maps.newHashMap();</span><br><span class="line">Map&lt;Integer, String&gt; idToName = Maps.newHashMap();</span><br><span class="line"></span><br><span class="line">nameToId.put(<span class="string">"Bob"</span>, <span class="number">42</span>);</span><br><span class="line">idToName.put(<span class="number">42</span>, <span class="string">"Bob"</span>);</span><br><span class="line"><span class="comment">// what happens if "Bob" or 42 are already present?</span></span><br><span class="line"><span class="comment">// weird bugs can arise if we forget to keep these in sync...</span></span><br></pre></td></tr></table></figure>
+
+<p>BiMap&lt;K, V&gt;是特殊的Map：</p>
+<ul>
+<li>允许你使用inverse()方法去反转BiMap&lt;V, K&gt;的键值</li>
+<li>保证值是唯一的，values()返回一个Set</li>
+</ul>
+<p>使用BiMap.put(key, value)方法去添加一个已存在的key将会引起IllegalArgumentException异常，如果你想强制替换就要使用BiMap.forcePut(key, value)</p>
+<p><a name="ZszIi"></a></p>
+<h2 id="Table"><a href="#Table" class="headerlink" title="Table"></a>Table</h2><p>通常来说，当你想使用多个键做索引的时候，你可能会用类似Map&lt;FirstName, Map&lt;LastName, Person&gt;&gt;的实现，这种方式很丑陋，使用上也不友好。Guava为此提供了新集合类型Table，它有两个支持所有类型的键：”行”和”列”。Table提供多种视图，以便你从各种角度使用它：</p>
+<ul>
+<li>rowMap()：用Map&lt;R, Map&lt;C, V&gt;&gt;表现Table&lt;R, C, V&gt;。同样的， rowKeySet()返回“行”的集合Set<r>。</r></li>
+<li>row(r) ：用Map&lt;C, V&gt;返回给定“行”的所有列，对这个map进行的写操作也将写入Table中。</li>
+<li>类似的列访问方法：columnMap()、columnKeySet()、column(c)。（基于列的访问会比基于的行访问稍微低效点）</li>
+<li>cellSet()：用元素类型为Table.Cell&lt;R, C, V&gt;的Set表现Table&lt;R, C, V&gt;。Cell类似于Map.Entry，但它是用行和列两个键区分的。</li>
+</ul>
+<p>给出一个学生-课程-成绩表:</p>
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>javase</th>
+<th>80</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>b</td>
+<td>javaee</td>
+<td>90</td>
+</tr>
+<tr>
+<td>c</td>
+<td>javame</td>
+<td>100</td>
+</tr>
+<tr>
+<td>d</td>
+<td>guava</td>
+<td>60</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Table&lt;String, String, Integer&gt; tables = HashBasedTable.create();</span><br><span class="line">tables.put(<span class="string">"a"</span>, <span class="string">"javase"</span>, <span class="number">80</span>);</span><br><span class="line">tables.put(<span class="string">"b"</span>, <span class="string">"javaee"</span>, <span class="number">90</span>);</span><br><span class="line">tables.put(<span class="string">"c"</span>, <span class="string">"javame"</span>, <span class="number">100</span>);</span><br><span class="line">tables.put(<span class="string">"c"</span>, <span class="string">"javaee"</span>, <span class="number">80</span>);</span><br><span class="line">tables.put(<span class="string">"d"</span>, <span class="string">"guava"</span>, <span class="number">70</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 所有学生</span></span><br><span class="line">Set&lt;String&gt; students = tables.rowKeySet();</span><br><span class="line">assertEquals(Sets.newHashSet(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>), students);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 找到对应学生和科目的成绩</span></span><br><span class="line">assertEquals(<span class="number">100</span>, tables.get(<span class="string">"c"</span>, <span class="string">"javame"</span>).intValue());</span><br><span class="line">assertEquals(<span class="number">80</span>, tables.get(<span class="string">"c"</span>, <span class="string">"javaee"</span>).intValue());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 所有课程</span></span><br><span class="line">Set&lt;String&gt; courses = tables.columnKeySet();</span><br><span class="line">assertEquals(Sets.newHashSet(<span class="string">"javase"</span>, <span class="string">"javaee"</span>, <span class="string">"javame"</span>, <span class="string">"guava"</span>), courses);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 所有分数</span></span><br><span class="line">Collection&lt;Integer&gt; scores = tables.values();</span><br><span class="line">assertArrayEquals(Lists.newArrayList(<span class="number">80</span>, <span class="number">90</span>, <span class="number">100</span>, <span class="number">80</span>, <span class="number">70</span>).toArray(<span class="keyword">new</span> Integer[]&#123;&#125;), scores.toArray(<span class="keyword">new</span> Integer[]&#123;&#125;));</span><br></pre></td></tr></table></figure>
+
+<p><a name="CVRQ6"></a></p>
+<h2 id="RangeSet"><a href="#RangeSet" class="headerlink" title="RangeSet"></a>RangeSet</h2><p>RangeSet描述了一组不相连的、非空的区间。当把一个区间添加到可变的RangeSet时，所有相连的区间会被合并，空区间会被忽略。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">RangeSet&lt;Integer&gt; rangeSet = TreeRangeSet.create();</span><br><span class="line">rangeSet.add(Range.closed(<span class="number">1</span>, <span class="number">10</span>)); <span class="comment">// &#123;[1,10]&#125;</span></span><br><span class="line">rangeSet.add(Range.closedOpen(<span class="number">11</span>, <span class="number">15</span>));<span class="comment">//不相连区间:&#123;[1,10], [11,15)&#125;</span></span><br><span class="line">rangeSet.add(Range.closedOpen(<span class="number">15</span>, <span class="number">20</span>)); <span class="comment">//相连区间; &#123;[1,10], [11,20)&#125;</span></span><br><span class="line">rangeSet.add(Range.openClosed(<span class="number">0</span>, <span class="number">0</span>)); <span class="comment">//空区间; &#123;[1,10], [11,20)&#125;</span></span><br><span class="line">rangeSet.remove(Range.open(<span class="number">5</span>, <span class="number">10</span>)); <span class="comment">//分割[1, 10]; &#123;[1,5], [10,10], [11,20)&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><a name="jJQSI"></a></p>
+<h2 id="RangeMap"><a href="#RangeMap" class="headerlink" title="RangeMap"></a>RangeMap</h2><p>RangeMap描述了”不相交的、非空的区间”到特定值的映射。和RangeSet不同，RangeMap不会合并相邻的映射，即便相邻的区间映射到相同的值。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">RangeMap&lt;Integer, String&gt; rangeMap = TreeRangeMap.create();</span><br><span class="line">rangeMap.put(Range.closed(<span class="number">1</span>, <span class="number">10</span>), <span class="string">"foo"</span>); <span class="comment">//&#123;[1,10] =&gt; "foo"&#125;</span></span><br><span class="line">rangeMap.put(Range.open(<span class="number">3</span>, <span class="number">6</span>), <span class="string">"bar"</span>); <span class="comment">//&#123;[1,3] =&gt; "foo", (3,6) =&gt; "bar", [6,10] =&gt; "foo"&#125;</span></span><br><span class="line">rangeMap.put(Range.open(<span class="number">10</span>, <span class="number">20</span>), <span class="string">"foo"</span>); <span class="comment">//&#123;[1,3] =&gt; "foo", (3,6) =&gt; "bar", [6,10] =&gt; "foo", (10,20) =&gt; "foo"&#125;</span></span><br><span class="line">rangeMap.remove(Range.closed(<span class="number">5</span>, <span class="number">11</span>)); <span class="comment">//&#123;[1,3] =&gt; "foo", (3,5) =&gt; "bar", (11,20) =&gt; "foo"&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><a name="qAuLk"></a></p>
+<h1 id="字符工具"><a href="#字符工具" class="headerlink" title="字符工具"></a>字符工具</h1><ul>
+<li>Joiner</li>
+<li>Splitter</li>
+<li>CharMatcher</li>
+<li>Charsets</li>
+<li>CaseFormat</li>
+</ul>
+<p>CaseFormat在做代码生成器的时候是非常有用的，比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, <span class="string">"CONSTANT_NAME"</span>));</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/15/yuque/springboot集成docker/" rel="next" title="springboot集成docker">
+                <i class="fa fa-chevron-left"></i> springboot集成docker
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09" alt="刘易(Roy Liu)">
+            
+              <p class="site-author-name" itemprop="name">刘易(Roy Liu)</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/topcatv" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:topcatv@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/topcatv" target="_blank" title="Google"><i class="fa fa-fw fa-google"></i>Google</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/topcat" target="_blank" title="Weibo"><i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本工具"><span class="nav-number">1.</span> <span class="nav-text">基本工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#避免null"><span class="nav-number">1.1.</span> <span class="nav-text">避免null</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前置条件"><span class="nav-number">2.</span> <span class="nav-text">前置条件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数检查"><span class="nav-number">2.1.</span> <span class="nav-text">参数检查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用Object方法"><span class="nav-number">3.</span> <span class="nav-text">通用Object方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序器"><span class="nav-number">4.</span> <span class="nav-text">排序器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">5.</span> <span class="nav-text">异常处理</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#集合"><span class="nav-number"></span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不可变集合"><span class="nav-number">1.</span> <span class="nav-text">不可变集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新的集合类型"><span class="nav-number">1.1.</span> <span class="nav-text">新的集合类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multiset"><span class="nav-number">2.</span> <span class="nav-text">Multiset</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SortedMultiset"><span class="nav-number">2.0.1.</span> <span class="nav-text">SortedMultiset</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multimap"><span class="nav-number">3.</span> <span class="nav-text">Multimap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BiMap"><span class="nav-number">4.</span> <span class="nav-text">BiMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Table"><span class="nav-number">5.</span> <span class="nav-text">Table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RangeSet"><span class="nav-number">6.</span> <span class="nav-text">RangeSet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RangeMap"><span class="nav-number">7.</span> <span class="nav-text">RangeMap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符工具"><span class="nav-number"></span> <span class="nav-text">字符工具</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘易(Roy Liu)</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数&#58;</span>
+    
+    <span title="站点总字数">37k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总阅读时长&#58;</span>
+    
+    <span title="站点总阅读时长">0:37</span>
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1272906633&web_id=1272906633" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/reading_progress/reading_progress.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("iW6p7VKggqTdiEkabv0RzHpm-gzGzoHsz", "7Ym9Kfibx9AekoQuLON3QxXG");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
