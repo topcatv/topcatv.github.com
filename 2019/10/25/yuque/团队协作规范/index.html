@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Hexo, NexT">
+
+
+<meta name="description" content="Git使用 分支管理与发布策略一个仓库只允许一个长期的分支:  master 开发分支  所有的开发人员基于master分支进行开发。 临时分支：  发布分支 - release/{date} (例：release/**20190823**) 线上紧急热修复分支 - hotfix/{date} (例：hotfix/**20190823**) 开发人员临时功能分支 - feature/{featu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="团队协作规范">
+<meta property="og:url" content="http://topcatv.github.com/2019/10/25/yuque/团队协作规范/index.html">
+<meta property="og:site_name" content="老男将的叨叨">
+<meta property="og:description" content="Git使用 分支管理与发布策略一个仓库只允许一个长期的分支:  master 开发分支  所有的开发人员基于master分支进行开发。 临时分支：  发布分支 - release/{date} (例：release/**20190823**) 线上紧急热修复分支 - hotfix/{date} (例：hotfix/**20190823**) 开发人员临时功能分支 - feature/{featu">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/489197/1572498603899-d1959630-6391-43de-aacc-296a90750f2e.png#align=left&display=inline&height=534&name=Snipaste_2019-10-31_13-09-48.png&originHeight=534&originWidth=1428&search=&size=117605&status=done&width=1428">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/489197/1572488774370-de5a141c-2058-4c3e-b263-cf1e92120bd0.png#align=left&display=inline&height=17340&originHeight=17340&originWidth=6400&search=&size=0&status=done&width=6400">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/489197/1572490177772-5d889232-2c7f-4928-9343-8f42a36e3131.png#align=left&display=inline&height=10240&originHeight=10240&originWidth=6400&search=&size=0&status=done&width=6400">
+<meta property="og:updated_time" content="2019-11-21T10:31:11.675Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="团队协作规范">
+<meta name="twitter:description" content="Git使用 分支管理与发布策略一个仓库只允许一个长期的分支:  master 开发分支  所有的开发人员基于master分支进行开发。 临时分支：  发布分支 - release/{date} (例：release/**20190823**) 线上紧急热修复分支 - hotfix/{date} (例：hotfix/**20190823**) 开发人员临时功能分支 - feature/{featu">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2019/png/489197/1572498603899-d1959630-6391-43de-aacc-296a90750f2e.png#align=left&display=inline&height=534&name=Snipaste_2019-10-31_13-09-48.png&originHeight=534&originWidth=1428&search=&size=117605&status=done&width=1428">
+
+
+
+
+
+
+  <link rel="canonical" href="http://topcatv.github.com/2019/10/25/yuque/团队协作规范/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>团队协作规范 | 老男将的叨叨</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">老男将的叨叨</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生命不息 折腾不止</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://topcatv.github.com/2019/10/25/yuque/团队协作规范/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘易(Roy Liu)">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老男将的叨叨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">团队协作规范</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-25T10:01:30+08:00">2019-10-25</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/10/25/yuque/团队协作规范/" class="leancloud_visitors" data-flag-title="团队协作规范">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">2.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:03</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="dYxrl"></a></p>
+<h1 id="Git使用"><a href="#Git使用" class="headerlink" title="Git使用"></a>Git使用</h1><p><a name="wjG2T"></a></p>
+<h2 id="分支管理与发布策略"><a href="#分支管理与发布策略" class="headerlink" title="分支管理与发布策略"></a>分支管理与发布策略</h2><p>一个仓库只允许一个长期的分支:</p>
+<ul>
+<li><strong>master 开发分支</strong></li>
+</ul>
+<p>所有的开发人员基于master分支进行开发。</p>
+<p>临时分支：</p>
+<ul>
+<li>发布分支 - release/{date} <strong>(例：release/**</strong>20190823<strong>**)</strong></li>
+<li>线上紧急热修复分支 - hotfix/{date} <strong>(例：hotfix/**</strong>20190823<strong>**)</strong></li>
+<li>开发人员临时功能分支 - feature/{feature name} <strong>(例：feature/fileupload)</strong></li>
+</ul>
+<p>开发模式如下：</p>
+<ol>
+<li><p>获取最新的代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git fetch</span><br><span class="line">git rebase origin/master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地开发，然后提交</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推送到仓库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br><span class="line">git rebase origin/master</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>rebase的时候如果有冲突先解决冲突然后再执行<br></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit</span><br></pre></td></tr></table></figure>
+
+<p>完成后再重复3</p>
+<p><em><strong>注意：</strong></em></p>
+<blockquote>
+<p>这里只能使用rebase，禁止使用merge</p>
+</blockquote>
+<p><em><strong>建议：</strong></em></p>
+<blockquote>
+<ol>
+<li>如果功能较大，一次代码提交不合适，可多次commit最后再一次性push到主仓</li>
+<li>如果多人协同一个功能，尽量使用代码原子性、API版本、提前定义接口等方法，把功能拆小后尽快push到主仓，以免影响协作开发的同事</li>
+</ol>
+</blockquote>
+<p><a name="IoFlu"></a></p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><ol>
+<li><p>从master拉出一个发布分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git checkout -b release/20190309</span><br><span class="line"><span class="meta">#</span> 推到远端库</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在发布分支上进行测试与验证</p>
+</li>
+<li><p>如果验证发现问题，开发人员提交代码到master并cherry-pick到发布分支，回到2继续</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick &lt;fix-shal&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完成发布打tag</p>
+</li>
+</ol>
+<p>tag命名规则: release-{date}、hotfix-{release_date}-{seq} (例如：release-20190319、hotfix-20190319-1)</p>
+<p><a name="GrNLO"></a></p>
+<h3 id="热修复过程"><a href="#热修复过程" class="headerlink" title="热修复过程"></a>热修复过程</h3><ol>
+<li>从指定tag checkout 一个hotfix分支（该分支一直存在到下一次release版本发布）。</li>
+<li>开发人员在master分支上进行修复，然后cherry pick到hotfix分支。</li>
+<li>进行测试与验证，如果发现问题回到2继续</li>
+<li>发布hotfix分支，并打tag</li>
+</ol>
+<p><em><strong>注意：</strong></em></p>
+<blockquote>
+<p>hotfix分支的生命周期应与每一次迭代的生命周期保持一致，上一次发布的热修复会一直在这个分支上进行</p>
+</blockquote>
+<p><a name="6i6OT"></a></p>
+<h2 id="commit-规范"><a href="#commit-规范" class="headerlink" title="commit 规范"></a>commit 规范</h2><blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">type</span>&gt;</span>: <span class="tag">&lt;<span class="name">subject</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">BLANK</span> <span class="attr">LINE</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a name="L5Ui6"></a></p>
+<h3 id="Type（必要）"><a href="#Type（必要）" class="headerlink" title="Type（必要）"></a>Type（必要）</h3><p>描述本次提交的类型。<br>高频：</p>
+<ul>
+<li>feat: 一个新的功能</li>
+<li>fix: 修复 Bug</li>
+<li>perf: 提高性能的代码</li>
+<li>refactor: 代码重构</li>
+<li>style: 编码规范、风格上的修改，不影响功能</li>
+<li>test: 测试用例修改</li>
+</ul>
+<p>低频：</p>
+<ul>
+<li>docs: 仅改变项目文档</li>
+<li>build: 改变项目构建流程或包依赖<br><a name="AjinK"></a><h3 id="Subject（必要）"><a href="#Subject（必要）" class="headerlink" title="Subject（必要）"></a>Subject（必要）</h3>用于描述本次 commit 的简要说明<br><a name="einvO"></a><h3 id="Body（可选）"><a href="#Body（可选）" class="headerlink" title="Body（可选）"></a>Body（可选）</h3>往往用来描述本次 Commit 的动机、需同步给团队的信息等</li>
+</ul>
+<p>参考：<a href="https://www.conventionalcommits.org/en/v1.0.0/" target="_blank" rel="noopener">https://www.conventionalcommits.org/en/v1.0.0/</a></p>
+<p><a name="C1ZrJ"></a></p>
+<h3 id="配置git提交模板"><a href="#配置git提交模板" class="headerlink" title="配置git提交模板"></a>配置git提交模板</h3><p>创建文件 <code>.git_commit_template</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">type</span>&gt;</span>: <span class="tag">&lt;<span class="name">subject</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>设置为git提交模板</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global commit.template $HOME/.git_commit_template</span><br></pre></td></tr></table></figure>
+
+<p><a name="k2KW3"></a></p>
+<h1 id="API接口文档"><a href="#API接口文档" class="headerlink" title="API接口文档"></a>API接口文档</h1><p>为什么我们要使用API接口文档？当前大部分的项目都是前后端分离的开发模式，前端与后台开发必须基于约定进行开发，这样才能并行开发。接口的变化及版本也需要记录并标记下来。对于测试人员也可以提前针对接口编写自动化的测试脚本，可以更早的发现问题。</p>
+<p>API接口文档我们选用去哪网前端团队开发的<a href="https://hellosean1025.github.io/yapi/" target="_blank" rel="noopener">YApi</a>，具体的使用手册请参考<a href="https://hellosean1025.github.io/yapi/documents/index.html" target="_blank" rel="noopener">这里</a>。<br>其功能包括：</p>
+<ul>
+<li>可视化接口管理</li>
+<li>数据mock</li>
+<li>自动化接口测试</li>
+<li>数据导入（各种，包括swagger、har、postman、json、命令行）</li>
+<li>权限管理</li>
+<li>支持本地化部署</li>
+<li>支持插件</li>
+<li>支持二次开发</li>
+</ul>
+<p>对于后台开发人员编写API接口文档有以下两种推荐方式：</p>
+<ol>
+<li>swagger导入</li>
+<li>har导入</li>
+</ol>
+<p>Swagger导入，可以在项目中集成Swagger，并使用<a href="https://github.com/kongchen/swagger-maven-plugin" target="_blank" rel="noopener">Swagger maven plugin</a>在每次打包时生成swagger的json格式api，可直接导入YApi。<br>HAR导入，har是HTTP Archive format的简称，我们写好代码，在开发自测调试时可以在chrome中访问我们的接口，chrome可以自动记录并将所有的请求保存为har格式的文件并导入YApi，如下图所示。<br><img src="https://cdn.nlark.com/yuque/0/2019/png/489197/1572498603899-d1959630-6391-43de-aacc-296a90750f2e.png#align=left&display=inline&height=534&name=Snipaste_2019-10-31_13-09-48.png&originHeight=534&originWidth=1428&search=&size=117605&status=done&width=1428" alt="Snipaste_2019-10-31_13-09-48.png"></p>
+<p><a name="6cc4W"></a></p>
+<h1 id="代码评审-CodeReview"><a href="#代码评审-CodeReview" class="headerlink" title="代码评审 - CodeReview"></a>代码评审 - CodeReview</h1><p>代码评审在不管任何项目或产品的开发过程中都是不可或缺的一步。一般项目都不会由一个人开发完成，都是由团队中的多人共同合作完成，但团队中的人员级别不一素质不同，因此代码评审可以帮助团队生产出的代码质量更均一，初级的开发人员可以更快速的提升自己能力，一些bug可以尽早发现。除此外还为什么我们强调代码评审是一个不可或缺的一步？如果不这样做为有什么问题？</p>
+<ul>
+<li>没有人可以完全了解一个项目所包含的所有代码，因为这些代码是由不同的人编写的。</li>
+<li>项目中的某些代码都只有作者自己才能看到。</li>
+<li>质量差的代码很可能会长期存在。</li>
+<li>没有人应对他人的代码负责，甚至不为自己的代码负责。</li>
+<li>团队成员发现很难获得经验并提高编码技能。</li>
+<li>糟糕的代码在测试阶段将会引起许多小问题。</li>
+<li>糟糕的代码会在开发人员修复bug时造成很大的困难（改出更多的bug）。</li>
+<li>当新开发人员加入项目时，他们的代码可能是风险最高的代码。</li>
+<li>对三个月前的代码进行重构将会非常复杂。</li>
+</ul>
+<p>因此我们需要通过代码评审来解决上面这些问题。</p>
+<p>对于一个新的功能或业务的开发（已有功能的修改和bugfix不算在内，除非这个改动影响比较大），其代码入库前需要进行代码评审，我们这里采用基于GitLab的Merge Request进行Code Review，步骤如下：</p>
+<ol>
+<li><p>获取最新的代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git fetch</span><br><span class="line">git rebase origin/master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>签出到功能分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b feature/***</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地开发并提交</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>push到远端</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发起merge request</p>
+</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/489197/1572488774370-de5a141c-2058-4c3e-b263-cf1e92120bd0.png#align=left&display=inline&height=17340&originHeight=17340&originWidth=6400&search=&size=0&status=done&width=6400" alt></p>
+<ol start="6">
+<li>评审并批注，如果不通过回到3<img src="https://cdn.nlark.com/yuque/0/2019/png/489197/1572490177772-5d889232-2c7f-4928-9343-8f42a36e3131.png#align=left&display=inline&height=10240&originHeight=10240&originWidth=6400&search=&size=0&status=done&width=6400" alt></li>
+<li>评审人进行merge，如有冲突先解决冲突</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/29/yuque/Guava学习记录/" rel="next" title="Guava学习记录">
+                <i class="fa fa-chevron-left"></i> Guava学习记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/18/yuque/Mac 终端环境配置/" rel="prev" title="Mac 终端环境配置">
+                Mac 终端环境配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://cn.gravatar.com/avatar/d4110ace8be56d4da704c138d8abee09" alt="刘易(Roy Liu)">
+            
+              <p class="site-author-name" itemprop="name">刘易(Roy Liu)</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/topcatv" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:topcatv@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/topcatv" target="_blank" title="Google"><i class="fa fa-fw fa-google"></i>Google</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/topcat" target="_blank" title="Weibo"><i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git使用"><span class="nav-number">1.</span> <span class="nav-text">Git使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分支管理与发布策略"><span class="nav-number">1.1.</span> <span class="nav-text">分支管理与发布策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署"><span class="nav-number">1.2.</span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#热修复过程"><span class="nav-number">1.2.1.</span> <span class="nav-text">热修复过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#commit-规范"><span class="nav-number">1.3.</span> <span class="nav-text">commit 规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Type（必要）"><span class="nav-number">1.3.1.</span> <span class="nav-text">Type（必要）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Subject（必要）"><span class="nav-number">1.3.2.</span> <span class="nav-text">Subject（必要）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Body（可选）"><span class="nav-number">1.3.3.</span> <span class="nav-text">Body（可选）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置git提交模板"><span class="nav-number">1.3.4.</span> <span class="nav-text">配置git提交模板</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#API接口文档"><span class="nav-number">2.</span> <span class="nav-text">API接口文档</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码评审-CodeReview"><span class="nav-number">3.</span> <span class="nav-text">代码评审 - CodeReview</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘易(Roy Liu)</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数&#58;</span>
+    
+    <span title="站点总字数">43k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总阅读时长&#58;</span>
+    
+    <span title="站点总阅读时长">0:43</span>
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1272906633&web_id=1272906633" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/reading_progress/reading_progress.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("iW6p7VKggqTdiEkabv0RzHpm-gzGzoHsz", "7Ym9Kfibx9AekoQuLON3QxXG");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
